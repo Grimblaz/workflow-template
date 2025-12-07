@@ -1,0 +1,123 @@
+# Contributing to Workflow Template
+
+Thank you for your interest in contributing! This template aims to help teams work effectively with AI coding agents.
+
+## Ways to Contribute
+
+### Report Issues
+
+Found a problem with an agent definition or instruction?
+
+1. Check [existing issues](../../issues) first
+2. Open a new issue with:
+   - Clear description of the problem
+   - Steps to reproduce
+   - Expected vs actual behavior
+   - Your environment details
+
+### Suggest Improvements
+
+Have ideas for better prompts or workflows?
+
+1. Open a [discussion](../../discussions) to gather feedback
+2. If there's consensus, create an issue
+3. Reference the discussion in your PR
+
+### Submit Pull Requests
+
+Ready to contribute code or documentation?
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/improvement-name`)
+3. Make your changes
+4. Test thoroughly
+5. Submit a PR
+
+## Guidelines
+
+### Agent Definitions
+
+When modifying or adding agents:
+
+- Keep responsibilities focused and clear
+- Define interaction patterns with other agents
+- Include examples where helpful
+- Test with real scenarios
+
+### Skills
+
+When adding skills:
+
+- Make them domain-agnostic when possible
+- Include clear README documentation
+- Provide practical examples
+- Structure for easy customization
+
+### Documentation
+
+When updating docs:
+
+- Use clear, concise language
+- Include practical examples
+- Keep formatting consistent
+- Update related docs if needed
+
+### Commits
+
+- Write clear commit messages
+- Reference issues when applicable
+- Keep commits focused and atomic
+
+Example:
+
+```text
+Add validation for agent prompt format
+
+- Add schema validation for agent definitions
+- Include helpful error messages
+- Update documentation with format requirements
+
+Fixes #42
+```
+
+## Pull Request Process
+
+1. **Describe your changes** - What and why
+2. **Reference issues** - Link related issues
+3. **Show testing** - How did you verify it works?
+4. **Update docs** - Include any needed documentation
+
+### PR Template
+
+```markdown
+## Description
+Brief description of changes.
+
+## Related Issues
+Fixes #XX
+
+## Testing
+How was this tested?
+
+## Checklist
+- [ ] Documentation updated
+- [ ] Tested with example project
+- [ ] No breaking changes (or documented)
+```
+
+## Code of Conduct
+
+Be respectful and constructive. We're all here to make better tools.
+
+- Be welcoming to newcomers
+- Accept constructive criticism gracefully
+- Focus on what's best for the community
+- Show empathy towards others
+
+## Questions?
+
+- Open a [discussion](../../discussions)
+- Check existing issues and discussions
+- Review the documentation
+
+Thank you for helping improve this template!
