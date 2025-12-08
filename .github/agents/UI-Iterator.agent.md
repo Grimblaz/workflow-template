@@ -86,7 +86,7 @@ If the UI requires custom art assets (icons, backgrounds, images):
 - Fix functional bugs (use Code-Smith)
 - Implement new features (use Code-Smith)
 - Handle accessibility (separate concern)
-- Major redesigns (use design-research first)
+- Major redesigns (use Issue-Designer first)
 
 ---
 
