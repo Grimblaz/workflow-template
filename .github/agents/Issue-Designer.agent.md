@@ -209,7 +209,7 @@ Conceptual and exploratory, present options (not solutions), use evidence/exampl
 - `Documents/Research/`: Comparative analysis, pattern research
 - `Documents/Decisions/`: ADRs, design rationale, alternatives
 
-**Handoff to Implementation**: Document decisions → Identify open questions → Mark "ready for implementation" → Switch to implementation-agent
+**Handoff to Implementation**: Document decisions → Identify open questions → Mark "ready for implementation" → Switch to Code-Conductor
 
 ---
 

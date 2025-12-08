@@ -183,7 +183,7 @@ If the UI requires custom art assets (icons, backgrounds, images):
 - During active feature development (wait until stable)
 - For accessibility issues (separate concern)
 - For functional bugs (use Code-Smith directly)
-- Major redesigns (needs design-research first)
+- Major redesigns (needs Issue-Designer first)
 
 ---
 

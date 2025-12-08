@@ -371,7 +371,7 @@ This catches issues early rather than waiting for full validation phase.
 
 Code Conductor operates autonomously but yields to user for:
 
-- Design decisions (call issue-designer for exploration)
+- Design decisions (call Issue-Designer for exploration)
 - PR approval (work complete, ready for review)
 - Clarification needed (ambiguous requirements)
 - Workflow complete (all phases done)
@@ -385,13 +385,13 @@ User: "Implement FeatureProcessor using Plan.md"
 Conductor:
 
 1. Reads Plan.md (5 phases: tests, implement, refactor, review, review-response)
-2. Announces: "Calling @test-writer for Phase 1..." → Calls test-writer: "Write tests for FeatureProcessor per Plan.md phase 1"
+2. Announces: "Calling @Test-Writer for Phase 1..." → Calls Test-Writer: "Write tests for FeatureProcessor per Plan.md phase 1"
 3. Reviews tests, marks phase 1 complete
-4. Announces: "Calling @code-smith for Phase 2..." → Calls code-smith: "Implement FeatureProcessor to pass tests per phase 2"
+4. Announces: "Calling @Code-Smith for Phase 2..." → Calls Code-Smith: "Implement FeatureProcessor to pass tests per phase 2"
 5. Reviews implementation, marks phase 2 complete
-6. Announces: "Calling @refactor-specialist for Phase 3..." → Calls refactor-specialist: "Refactor per phase 3 requirements"
-7. Announces: "Calling @code-critic for Phase 4..." → Calls code-critic: "Review PR per phase 4 checklist"
-8. Announces: "Calling @code-review-response for Phase 5..." → Calls code-review-response: "Address code review feedback and delegate fixes"
+6. Announces: "Calling @Refactor-Specialist for Phase 3..." → Calls Refactor-Specialist: "Refactor per phase 3 requirements"
+7. Announces: "Calling @Code-Critic for Phase 4..." → Calls Code-Critic: "Review PR per phase 4 checklist"
+8. Announces: "Calling @Code-Review-Response for Phase 5..." → Calls Code-Review-Response: "Address code review feedback and delegate fixes"
 9. Reports: "Implementation complete. 5 phases done. Files: FeatureProcessor.ts, tests. Ready for PR review."
 
 **Example 2: No Existing Plan (Research-First Workflow)**
