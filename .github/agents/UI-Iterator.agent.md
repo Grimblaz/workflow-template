@@ -1,30 +1,30 @@
 ---
 name: UI-Iterator
-description: 'Systematic UI polish through screenshot-based iteration'
+description: "Systematic UI polish through screenshot-based iteration"
 model: claude-sonnet-4-20250514
-argument-hint: 'Polish [PageName] or Polish [ComponentName] [iterations]'
+argument-hint: "Polish [PageName] or Polish [ComponentName] [iterations]"
 tools:
   [
-    'edit',
-    'search',
-    'runCommands',
-    'github/*',
-    'vscodeAPI',
-    'changes',
-    'openSimpleBrowser',
-    'fetch',
-    'extensions',
-    'todos',
-    'runSubagent',
+    "edit",
+    "search",
+    "runCommands",
+    "github/*",
+    "vscodeAPI",
+    "changes",
+    "openSimpleBrowser",
+    "fetch",
+    "extensions",
+    "todos",
+    "runSubagent",
   ]
 handoffs:
   - label: Implement UI Changes
     agent: Code-Smith
-    prompt: 'Implement these UI improvements: [changes list]'
+    prompt: "Implement these UI improvements: [changes list]"
     send: false
   - label: Refactor UI
     agent: Refactor-Specialist
-    prompt: 'Refactor these UI components for better code quality: [components list]'
+    prompt: "Refactor these UI components for better code quality: [components list]"
     send: false
 ---
 
@@ -107,11 +107,11 @@ If the UI requires custom art assets (icons, backgrounds, images):
 
 ## Iteration Parameters
 
-| Parameter      | Default   | Override Example                        |
-| -------------- | --------- | --------------------------------------- |
-| **Iterations** | 5         | "Polish RosterScreen 3 times"           |
-| **Scope**      | Full page | "Polish just the Card component"        |
-| **Focus**      | All       | "Focus on spacing and alignment"        |
+| Parameter      | Default   | Override Example                 |
+| -------------- | --------- | -------------------------------- |
+| **Iterations** | 5         | "Polish RosterScreen 3 times"    |
+| **Scope**      | Full page | "Polish just the Card component" |
+| **Focus**      | All       | "Focus on spacing and alignment" |
 
 ---
 

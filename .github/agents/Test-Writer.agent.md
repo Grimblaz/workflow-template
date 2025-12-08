@@ -1,10 +1,19 @@
 ---
 name: Test-Writer
-description: 'Test writing and validation specialist for high-quality behavior-focused tests'
+description: "Test writing and validation specialist for high-quality behavior-focused tests"
 model: gpt-4o
-argument-hint: 'Write tests, validate coverage, or fix test failures'
+argument-hint: "Write tests, validate coverage, or fix test failures"
 tools:
-  ['runCommands', 'edit', 'search', 'runSubagent', 'usages', 'problems', 'testFailure', 'changes']
+  [
+    "runCommands",
+    "edit",
+    "search",
+    "runSubagent",
+    "usages",
+    "problems",
+    "testFailure",
+    "changes",
+  ]
 handoffs:
   - label: Implement Code
     agent: Code-Smith
@@ -87,7 +96,7 @@ Writes behavior-focused tests before implementation (TDD). Tests should specify 
 **❌ Bad** - Testing implementation/formula:
 
 ```typescript
-it('calculates value with formula: base × (1 + modifier × 0.1)', () => {
+it("calculates value with formula: base × (1 + modifier × 0.1)", () => {
   const entity = createEntity({ modifier: 10 });
   const value = calculateValue(entity);
   expect(value).toBe(10 * (1 + 10 * 0.1)); // Testing arithmetic
@@ -97,7 +106,7 @@ it('calculates value with formula: base × (1 + modifier × 0.1)', () => {
 **✅ Good** - Testing behavior:
 
 ```typescript
-it('produces higher values with higher modifiers', () => {
+it("produces higher values with higher modifiers", () => {
   const lowModifier = createEntity({ modifier: 5 });
   const highModifier = createEntity({ modifier: 20 });
 
@@ -111,10 +120,10 @@ it('produces higher values with higher modifiers', () => {
 ### Arrange-Act-Assert Pattern
 
 ```typescript
-it('should apply type advantage multiplier in combat', () => {
+it("should apply type advantage multiplier in combat", () => {
   // ARRANGE: Set up test conditions
-  const attacker = createEntity({ type: 'fire' });
-  const defender = createEntity({ type: 'ice' });
+  const attacker = createEntity({ type: "fire" });
+  const defender = createEntity({ type: "ice" });
   const system = new CombatSystem();
 
   // ACT: Execute the behavior
@@ -131,13 +140,13 @@ it('should apply type advantage multiplier in combat', () => {
 **❌ Bad** - Repetitive individual tests:
 
 ```typescript
-it('calculates value for level 1', () => {
+it("calculates value for level 1", () => {
   expect(calculateValue(1)).toBe(100);
 });
-it('calculates value for level 5', () => {
+it("calculates value for level 5", () => {
   expect(calculateValue(5)).toBe(500);
 });
-it('calculates value for level 10', () => {
+it("calculates value for level 10", () => {
   expect(calculateValue(10)).toBe(1000);
 });
 ```
@@ -149,7 +158,7 @@ it.each([
   { level: 1, expectedValue: 100 },
   { level: 5, expectedValue: 500 },
   { level: 10, expectedValue: 1000 },
-])('produces $expectedValue at level $level', ({ level, expectedValue }) => {
+])("produces $expectedValue at level $level", ({ level, expectedValue }) => {
   expect(calculateValue(level)).toBe(expectedValue);
 });
 ```
@@ -159,7 +168,7 @@ it.each([
 **❌ Wrong** - Bypassing encapsulation:
 
 ```typescript
-it('calculates internal delay value', () => {
+it("calculates internal delay value", () => {
   const system = new CombatSystem();
   // @ts-ignore - accessing private method
   const delay = system._calculateDelay(entity);

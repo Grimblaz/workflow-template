@@ -1,10 +1,19 @@
 ---
 name: Code-Critic
-description: 'Professional code review for architecture, security, and quality analysis'
+description: "Professional code review for architecture, security, and quality analysis"
 model: gpt-4o
-argument-hint: 'Review code for architecture compliance, security issues, and quality standards'
+argument-hint: "Review code for architecture compliance, security issues, and quality standards"
 tools:
-  ['runCommands', 'edit', 'search', 'runSubagent', 'problems', 'changes', 'testFailure', 'fetch']
+  [
+    "runCommands",
+    "edit",
+    "search",
+    "runSubagent",
+    "problems",
+    "changes",
+    "testFailure",
+    "fetch",
+  ]
 handoffs:
   - label: Respond to Review
     agent: Code-Review-Response

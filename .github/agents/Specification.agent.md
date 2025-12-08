@@ -1,9 +1,9 @@
 ---
 name: Specification
-description: 'Generate or update specification documents for new or existing functionality.'
+description: "Generate or update specification documents for new or existing functionality."
 model: gemini-2.5-pro
-argument-hint: 'Create formal specification document'
-tools: ['runCommands', 'edit', 'search', 'fetch']
+argument-hint: "Create formal specification document"
+tools: ["runCommands", "edit", "search", "fetch"]
 ---
 
 # Specification Agent

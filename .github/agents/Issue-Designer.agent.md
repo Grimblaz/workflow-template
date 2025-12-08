@@ -1,18 +1,18 @@
 ---
 name: Issue-Designer
-description: 'Workflow entry point for new issues - handles GitHub setup, design exploration, and documentation before planning'
+description: "Workflow entry point for new issues - handles GitHub setup, design exploration, and documentation before planning"
 model: claude-sonnet-4-20250514
-argument-hint: 'Start design work for a new GitHub issue'
+argument-hint: "Start design work for a new GitHub issue"
 tools:
   [
-    'edit',
-    'search',
-    'runCommands',
-    'github/*',
-    'openSimpleBrowser',
-    'fetch',
-    'githubRepo',
-    'runSubagent',
+    "edit",
+    "search",
+    "runCommands",
+    "github/*",
+    "openSimpleBrowser",
+    "fetch",
+    "githubRepo",
+    "runSubagent",
   ]
 handoffs:
   - label: Research Details
@@ -78,6 +78,7 @@ Issue → Branch → Design → Commit design doc → Push → PR
 **BEFORE researching domain specifics**, load the appropriate Skill:
 
 1. **For domain knowledge**: Read `skills/{domain}/SKILL.md` first
+
    - Answer the intake question to get directed to the right reference
    - Use targeted reference files instead of grep-searching docs
 

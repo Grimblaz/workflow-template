@@ -1,9 +1,20 @@
 ---
 name: Plan-Architect
-description: 'Implementation plan architect - defines requirements and constraints for specialists'
+description: "Implementation plan architect - defines requirements and constraints for specialists"
 model: gpt-4o
-argument-hint: 'Create or update implementation plan for a feature or bug fix'
-tools: ['runCommands', 'edit', 'search', 'runSubagent', 'usages', 'problems', 'changes', 'testFailure', 'fetch']
+argument-hint: "Create or update implementation plan for a feature or bug fix"
+tools:
+  [
+    "runCommands",
+    "edit",
+    "search",
+    "runSubagent",
+    "usages",
+    "problems",
+    "changes",
+    "testFailure",
+    "fetch",
+  ]
 handoffs:
   - label: Write Tests (TDD)
     agent: Test-Writer

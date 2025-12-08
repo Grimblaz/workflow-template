@@ -1,9 +1,9 @@
 ---
 name: Research-Agent
-description: 'Research specialist for comprehensive technical analysis and pattern discovery'
+description: "Research specialist for comprehensive technical analysis and pattern discovery"
 model: gemini-2.5-pro
-argument-hint: 'Perform deep technical research for a task or feature'
-tools: ['edit', 'search', 'usages', 'fetch', 'githubRepo']
+argument-hint: "Perform deep technical research for a task or feature"
+tools: ["edit", "search", "usages", "fetch", "githubRepo"]
 handoffs:
   - label: Revisit Design
     agent: Issue-Designer

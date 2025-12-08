@@ -1,10 +1,19 @@
 ---
 name: Refactor-Specialist
-description: 'Code quality improvements, refactoring, and optimization specialist'
+description: "Code quality improvements, refactoring, and optimization specialist"
 model: gpt-4o
-argument-hint: 'Refactor code for better quality while maintaining tests'
+argument-hint: "Refactor code for better quality while maintaining tests"
 tools:
-  ['runCommands', 'edit', 'search', 'runSubagent', 'usages', 'problems', 'testFailure', 'changes']
+  [
+    "runCommands",
+    "edit",
+    "search",
+    "runSubagent",
+    "usages",
+    "problems",
+    "testFailure",
+    "changes",
+  ]
 handoffs:
   - label: Re-Validate Tests
     agent: Test-Writer

@@ -1,9 +1,9 @@
 ---
 name: Code-Review-Response
-description: 'Systematic response to code review feedback with categorization and delegation'
+description: "Systematic response to code review feedback with categorization and delegation"
 model: gpt-4o
-argument-hint: 'Analyze code review feedback and create response plan'
-tools: ['edit', 'search', 'runCommands', 'fetch', 'githubRepo', 'runSubagent']
+argument-hint: "Analyze code review feedback and create response plan"
+tools: ["edit", "search", "runCommands", "fetch", "githubRepo", "runSubagent"]
 # Note: 'edit' tool present ONLY for TECH-DEBT.md updates. DO NOT use for fix execution.
 handoffs:
   - label: Execute Fixes
@@ -93,16 +93,19 @@ Categorize and respond to each review item with clear acknowledgment, honest ass
 **Response Categories**:
 
 1. **✅ AGREED - Will Fix Immediately**
+
    - Simple changes (<15 minutes), docs, tests, bug fixes
    - Response: Quote feedback, action plan, ETA
    - Delegate to appropriate specialist via runSubagent
 
 2. **🔄 SIGNIFICANT - Needs User Assignment**
+
    - Changes >15 min that belong in this PR (not tech debt)
    - Response: Quote feedback, explain scope, recommend specialist
    - Action: Return to user for manual assignment to appropriate agent
 
 3. **📋 TECH DEBT - Valid But Out of Scope**
+
    - Criteria (must meet ONE): Scope (outside PR), Dependencies (not implemented), Risk (breaking changes), Architectural (cross-cutting)
    - DO NOT defer if: Belongs in current PR, blocking, or <10 minutes
    - Response: Quote feedback, criteria met, proposed issue
@@ -153,7 +156,7 @@ BEFORE calling runSubagent, you MUST:
 2. **Announce which agent you're calling**: Format: "Calling @{agent-name} for {fix description}..."
    Example: "Calling @Code-Smith to fix the null check issue..."
    This announcement MUST appear in your response BEFORE the tool call.
-</critical_rules>
+   </critical_rules>
 
 ### Delegation Workflow
 

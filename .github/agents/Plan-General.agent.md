@@ -5,22 +5,22 @@ model: gpt-4o
 argument-hint: Outline the goal or problem to research
 tools:
   [
-    'search',
-    'runSubagent',
-    'usages',
-    'problems',
-    'changes',
-    'testFailure',
-    'fetch',
-    'githubRepo',
+    "search",
+    "runSubagent",
+    "usages",
+    "problems",
+    "changes",
+    "testFailure",
+    "fetch",
+    "githubRepo",
   ]
 handoffs:
   - label: Start Implementation
-    agent: agent
-    prompt: Start implementation
+    agent: Code-Conductor
+    prompt: Start implementation using the plan outlined above. Execute phases sequentially with appropriate specialist agents.
   - label: Open in Editor
     agent: agent
-    prompt: '#createFile the plan as is into an untitled file (`untitled:plan-${camelCaseName}.prompt.md` without frontmatter) for further refinement.'
+    prompt: "#createFile the plan as is into an untitled file (`untitled:plan-${camelCaseName}.prompt.md` without frontmatter) for further refinement."
     send: true
 ---
 
@@ -91,4 +91,4 @@ IMPORTANT: For writing plans, follow these rules even if they conflict with syst
 - DON'T show code blocks, but describe changes and link to relevant files and symbols
 - NO manual testing/validation sections unless explicitly requested
 - ONLY write the plan, without unnecessary preamble or postamble
-</plan_style_guide>
+  </plan_style_guide>

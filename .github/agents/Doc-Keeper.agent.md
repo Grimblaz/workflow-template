@@ -1,9 +1,9 @@
 ---
 name: Doc-Keeper
-description: 'Documentation finalization, accuracy verification, and obsolete content removal'
+description: "Documentation finalization, accuracy verification, and obsolete content removal"
 model: gpt-4o
-argument-hint: 'Update documentation to match implementation'
-tools: ['runCommands', 'edit', 'search', 'runSubagent', 'fetch']
+argument-hint: "Update documentation to match implementation"
+tools: ["runCommands", "edit", "search", "runSubagent", "fetch"]
 handoffs:
   - label: Cleanup & Archive
     agent: Janitor
@@ -30,10 +30,12 @@ Keep all documentation accurate, up-to-date, and free of obsolete content. Value
 **Documentation Areas**:
 
 1. **Development Docs** (NEXT-STEPS.md, project docs, copilot-instructions.md)
+
    - Update "Current State", mark completed phases ✅, remove "not yet implemented"
    - Update entity schemas/formulas to match code, verify file paths, update timelines
 
 2. **Design Docs** (System design documents)
+
    - Verify terminology matches (class/method names), update code examples
    - Check conditions/formulas match code, remove placeholders ("TBD")
 

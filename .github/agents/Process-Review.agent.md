@@ -1,9 +1,9 @@
 ---
 name: Process-Review
-description: 'Meta-analysis of workflow execution to identify deviations and improvement opportunities'
+description: "Meta-analysis of workflow execution to identify deviations and improvement opportunities"
 model: claude-sonnet-4-20250514
-argument-hint: 'Analyze workflow execution and identify process improvements'
-tools: ['runCommands', 'search', 'fetch']
+argument-hint: "Analyze workflow execution and identify process improvements"
+tools: ["runCommands", "search", "fetch"]
 handoffs:
   - label: Update Instructions
     agent: Doc-Keeper

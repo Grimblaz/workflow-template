@@ -1,9 +1,10 @@
 ---
 name: Janitor
-description: 'Cleanup and tech debt remediation specialist'
+description: "Cleanup and tech debt remediation specialist"
 model: gpt-4o
-argument-hint: 'Clean up code, archive completed work, or remediate tech debt'
-tools: ['runCommands', 'github/*', 'edit', 'search', 'runSubagent', 'githubRepo']
+argument-hint: "Clean up code, archive completed work, or remediate tech debt"
+tools:
+  ["runCommands", "github/*", "edit", "search", "runSubagent", "githubRepo"]
 ---
 
 # Janitor Agent

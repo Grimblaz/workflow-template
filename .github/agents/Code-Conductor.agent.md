@@ -1,10 +1,23 @@
 ---
 name: Code-Conductor
-description: 'Plan-driven workflow orchestrator that executes multi-step implementations autonomously'
+description: "Plan-driven workflow orchestrator that executes multi-step implementations autonomously"
 model: claude-opus-4-5
-argument-hint: 'Describe the task or provide plan document path'
+argument-hint: "Describe the task or provide plan document path"
 tools:
-  ['edit', 'search', 'runCommands', 'runTasks', 'problems', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runSubagent']
+  [
+    "edit",
+    "search",
+    "runCommands",
+    "runTasks",
+    "problems",
+    "testFailure",
+    "openSimpleBrowser",
+    "fetch",
+    "githubRepo",
+    "extensions",
+    "todos",
+    "runSubagent",
+  ]
 ---
 
 # Code Conductor Agent
@@ -47,7 +60,7 @@ BEFORE calling runSubagent, you MUST:
 2. **Announce which agent you're calling**: Format: "Calling @{agent-name} for {phase description}..."
    Example: "Calling @Test-Writer for Phase 1: Write unit tests..."
    This announcement MUST appear in your response BEFORE the tool call.
-</critical_rules>
+   </critical_rules>
 
 ## Core Workflow
 

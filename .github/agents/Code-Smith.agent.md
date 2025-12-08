@@ -1,9 +1,18 @@
 ---
 name: Code-Smith
-description: 'Focused code implementation following TDD or plan-driven approach'
+description: "Focused code implementation following TDD or plan-driven approach"
 model: gpt-4o
-argument-hint: 'Implement code changes based on tests or plan'
-tools: ['runCommands', 'edit', 'search', 'usages', 'problems', 'changes', 'testFailure']
+argument-hint: "Implement code changes based on tests or plan"
+tools:
+  [
+    "runCommands",
+    "edit",
+    "search",
+    "usages",
+    "problems",
+    "changes",
+    "testFailure",
+  ]
 handoffs:
   - label: Create Plan
     agent: Plan-Architect
