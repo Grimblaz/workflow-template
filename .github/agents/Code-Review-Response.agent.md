@@ -2,7 +2,7 @@
 name: Code-Review-Response
 description: "Systematic response to code review feedback with categorization and delegation"
 argument-hint: "Analyze code review feedback and create response plan"
-tools: ["edit", "search", "runCommands", "fetch", "githubRepo", "runSubagent"]
+tools: ['edit', 'search', 'runCommands', 'fetch', 'githubRepo', 'runSubagent']
 # Note: 'edit' tool present ONLY for TECH-DEBT.md updates. DO NOT use for fix execution.
 handoffs:
   - label: Execute Fixes

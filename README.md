@@ -83,6 +83,8 @@ Key customization points:
 - **`architecture-rules.md`** - Your architecture patterns
 - **`skills/`** - Domain-specific knowledge
 
+Note: `copilot-instructions.md` and `architecture-rules.md` ship with the Phase 5 example deliverables and are not present earlier.
+
 ## Design Philosophy
 
 ### Standalone Template with Manual Sync
@@ -105,7 +107,9 @@ This template follows a **copy-and-adapt** model:
 This template includes example configurations for:
 - **Spring Boot Microservice** - Layered architecture (Controller → Service → Repository)
 
-The example demonstrates how agents work across different project types.
+> **Note**: All concrete examples throughout this template (test commands, quality gates, code patterns) use **Java/Spring Boot** conventions. When adapting for other stacks (Node.js, Python, etc.), replace these with your framework's equivalents while keeping the same conceptual structure.
+
+The examples demonstrate how agents and skills work in practice, serving as a reference for adaptation to your specific technology stack.
 
 ## Contributing
 
