@@ -83,6 +83,8 @@ Key customization points:
 - **`architecture-rules.md`** - Your architecture patterns
 - **`skills/`** - Domain-specific knowledge
 
+Note: `copilot-instructions.md` and `architecture-rules.md` ship with the Phase 5 example deliverables and are not present earlier.
+
 ## Design Philosophy
 
 ### Standalone Template with Manual Sync

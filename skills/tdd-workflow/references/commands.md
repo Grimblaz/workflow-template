@@ -162,7 +162,7 @@ mvn clean verify jacoco:report pitest:mutationCoverage
 | Coverage report        | `mvn jacoco:report`                     | `./gradlew jacocoTestReport`  |
 | Mutation testing       | `mvn pitest:mutationCoverage`           | `./gradlew pitest`            |
 | Integration tests      | `mvn verify`                            | `./gradlew integrationTest`   |
-| Full validation        | `mvn clean verify`                      | `./gradlew clean check`       |
+| Full validation        | `mvn clean verify`                      | `./gradlew clean test jacocoTestReport pitest` |
 
 ---
 
