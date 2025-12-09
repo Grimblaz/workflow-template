@@ -107,8 +107,8 @@ Test **what** code does, not **how** it does it:
 // ✅ GOOD: Tests behavior
 @Test
 void higherVitalityIncreasesMaxHealth() {
-    Character lowVit = new Character(vitality: 10);
-    Character highVit = new Character(vitality: 20);
+    Character lowVit = new Character(10);
+    Character highVit = new Character(20);
 
     assertThat(highVit.getMaxHealth()).isGreaterThan(lowVit.getMaxHealth());
 }
@@ -116,7 +116,7 @@ void higherVitalityIncreasesMaxHealth() {
 // ❌ BAD: Tests implementation
 @Test
 void calculateHealthMultipliesVitalityByTen() {
-    Character character = new Character(vitality: 10);
+    Character character = new Character(10);
 
     assertThat(character.getMaxHealth()).isEqualTo(100); // Brittle!
 }

@@ -60,10 +60,6 @@ class UserServiceTest {
 ### 3. Verify Test Fails (RED)
 
 ```bash
-# Maven
-mvn test -Dtest=UserServiceTest#returnsUserWhenFoundById
-
-# Gradle
 ./gradlew test --tests "UserServiceTest.returnsUserWhenFoundById"
 ```
 

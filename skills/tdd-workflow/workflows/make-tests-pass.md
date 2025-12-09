@@ -60,10 +60,6 @@ public class UserService {
 ### 3. Run Tests (GREEN)
 
 ```bash
-# Maven
-mvn test
-
-# Gradle
 ./gradlew test
 ```
 

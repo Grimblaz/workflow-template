@@ -6,21 +6,17 @@ After tests pass, validate they meet quality thresholds before considering the f
 
 ## Quality Hierarchy
 
-| Priority     | Gate       | Threshold | Command                                       |
-| ------------ | ---------- | --------- | --------------------------------------------- |
-| 🥇 PRIMARY   | Mutation   | ≥80%      | `mvn pitest:mutationCoverage`                 |
-| 🥈 SECONDARY | Coverage   | ≥80%      | `mvn test jacoco:report`                      |
-| 🥉 BASELINE  | Tests Pass | 100%      | `mvn test`                                    |
+| Priority     | Gate       | Threshold | Command                          |
+| ------------ | ---------- | --------- | -------------------------------- |
+| 🥇 PRIMARY   | Mutation   | ≥80%      | `./gradlew pitest`               |
+| 🥈 SECONDARY | Coverage   | ≥80%      | `./gradlew jacocoTestReport`     |
+| 🥉 BASELINE  | Tests Pass | 100%      | `./gradlew test`                 |
 
 ## Workflow Steps
 
 ### 1. Run Tests
 
 ```bash
-# Maven
-mvn test
-
-# Gradle
 ./gradlew test
 ```
 
@@ -29,14 +25,10 @@ mvn test
 ### 2. Check Code Coverage
 
 ```bash
-# Maven with JaCoCo
-mvn test jacoco:report
-
-# Gradle with JaCoCo
 ./gradlew test jacocoTestReport
 ```
 
-**View report:** `target/site/jacoco/index.html` (Maven) or `build/reports/jacoco/test/html/index.html` (Gradle)
+**View report:** `build/reports/jacoco/test/html/index.html`
 
 **Target:** ≥80% line and branch coverage for core logic
 
@@ -45,14 +37,10 @@ mvn test jacoco:report
 Mutation testing is the **primary quality gate**—it validates that your tests actually catch bugs.
 
 ```bash
-# Maven with PIT
-mvn test-compile org.pitest:pitest-maven:mutationCoverage
-
-# Gradle with PIT
 ./gradlew pitest
 ```
 
-**View report:** `target/pit-reports/index.html` (Maven) or `build/reports/pitest/index.html` (Gradle)
+**View report:** `build/reports/pitest/index.html`
 
 **Target:** ≥80% mutation score
 
@@ -105,11 +93,11 @@ void getUserByIdReturnsNonNull() {
 
 ## Quick Reference
 
-| Check    | Command (Maven)                                          | Command (Gradle)             | Threshold |
-| -------- | -------------------------------------------------------- | ---------------------------- | --------- |
-| Tests    | `mvn test`                                               | `./gradlew test`             | 100% pass |
-| Coverage | `mvn test jacoco:report`                                 | `./gradlew jacocoTestReport` | ≥80%      |
-| Mutation | `mvn pitest:mutationCoverage`                            | `./gradlew pitest`           | ≥80%      |
+| Check    | Command                         | Threshold |
+| -------- | -------------------------------- | --------- |
+| Tests    | `./gradlew test`                | 100% pass |
+| Coverage | `./gradlew jacocoTestReport`    | ≥80%      |
+| Mutation | `./gradlew pitest`              | ≥80%      |
 
 ## Checklist
 

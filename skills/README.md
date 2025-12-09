@@ -74,4 +74,4 @@ See `tdd-workflow/` for a complete example.
 
 ## Customization
 
-> **Note**: The `tdd-workflow` skill uses Java/Spring Boot examples (JUnit, Maven/Gradle commands). Adapt the commands and patterns for your technology stack while keeping the conceptual structure.
+> **Note**: The `tdd-workflow` skill uses Java/Spring Boot examples (JUnit and Gradle commands). Adapt the commands and patterns for your technology stack while keeping the conceptual structure.

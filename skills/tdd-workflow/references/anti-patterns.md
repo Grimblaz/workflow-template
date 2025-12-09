@@ -129,7 +129,7 @@ void throwsNotFoundForUnknownUser() {
 // ❌ BAD: Testing the formula
 @Test
 void healthIs10TimesVitality() {
-    Character character = new Character(vitality: 15);
+    Character character = new Character(15);
 
     assertThat(character.getMaxHealth()).isEqualTo(150);
 }
@@ -147,8 +147,8 @@ void healthIs10TimesVitality() {
 // ✅ GOOD: Test the behavior rule
 @Test
 void higherVitalityGivesMoreHealth() {
-    Character lowVit = new Character(vitality: 10);
-    Character highVit = new Character(vitality: 20);
+    Character lowVit = new Character(10);
+    Character highVit = new Character(20);
 
     assertThat(highVit.getMaxHealth()).isGreaterThan(lowVit.getMaxHealth());
 }

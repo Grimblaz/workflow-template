@@ -32,10 +32,6 @@ Common smells to address:
 ### 3. Run Tests
 
 ```bash
-# Maven
-mvn test
-
-# Gradle
 ./gradlew test
 ```
 

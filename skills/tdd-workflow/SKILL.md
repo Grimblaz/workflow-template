@@ -14,7 +14,7 @@ dependencies: []
 
 This skill module provides comprehensive TDD workflow guidance, including the RED-GREEN-REFACTOR cycle, quality gates, test patterns, and anti-patterns to avoid.
 
-> **Note**: Examples use Java/Spring Boot conventions (JUnit 5, Maven/Gradle). Adapt commands for your stack while following the same patterns.
+> **Note**: Examples use Java/Spring Boot conventions (JUnit 5, Gradle). Adapt commands for your stack while following the same patterns.
 
 <essential_principles>
 
@@ -112,21 +112,12 @@ Quality gates are enforced in priority order:
 ```bash
 # CUSTOMIZE: Replace with your project's test commands
 
-# Run tests (Maven)
-mvn test
-
-# Run tests (Gradle)
+# Run tests
 ./gradlew test
 
-# Run with coverage (Maven + JaCoCo)
-mvn test jacoco:report
-
-# Run with coverage (Gradle + JaCoCo)
+# Run with coverage (JaCoCo)
 ./gradlew test jacocoTestReport
 
-# Run mutation testing (Maven + PIT)
-mvn test-compile org.pitest:pitest-maven:mutationCoverage
-
-# Run mutation testing (Gradle + PIT)
+# Run mutation testing (PIT)
 ./gradlew pitest
 ```

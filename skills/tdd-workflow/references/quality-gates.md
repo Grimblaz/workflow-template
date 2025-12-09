@@ -55,27 +55,7 @@ For larger projects, consider tiered approaches:
 - **Time**: 30-60+ minutes
 - **Purpose**: Baseline quality metrics
 
-## Configuration Examples
-
-### Maven (pom.xml)
-
-```xml
-<plugin>
-    <groupId>org.pitest</groupId>
-    <artifactId>pitest-maven</artifactId>
-    <version>1.15.0</version>
-    <configuration>
-        <targetClasses>
-            <param>com.example.service.*</param>
-            <param>com.example.domain.*</param>
-        </targetClasses>
-        <mutationThreshold>80</mutationThreshold>
-        <coverageThreshold>80</coverageThreshold>
-    </configuration>
-</plugin>
-```
-
-### Gradle (build.gradle)
+## Configuration Example (Gradle)
 
 ```groovy
 pitest {
