@@ -1,7 +1,6 @@
 ---
 name: Doc-Keeper
 description: "Documentation finalization, accuracy verification, and obsolete content removal"
-model: gpt-4o
 argument-hint: "Update documentation to match implementation"
 tools: ["runCommands", "edit", "search", "runSubagent", "fetch"]
 handoffs:
@@ -16,6 +15,13 @@ handoffs:
 ## Overview
 
 Documentation specialist focused on keeping project documentation accurate, complete, and synchronized with implementation. Executes Documentation phase from implementation plans.
+
+## Model Recommendations
+
+> Model selection is at user discretion via the model picker. These suggestions are based on task complexity and cost optimization.
+
+- **GPT-4o** (0×): Default—good at structured writing
+- **Claude Haiku 4.5** (0.33×): When more polish or nuance needed at low cost
 
 ## Plan Tracking
 

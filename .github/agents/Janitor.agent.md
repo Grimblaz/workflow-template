@@ -1,7 +1,6 @@
 ---
 name: Janitor
 description: "Cleanup and tech debt remediation specialist"
-model: gpt-4o
 argument-hint: "Clean up code, archive completed work, or remediate tech debt"
 tools:
   ["runCommands", "github/*", "edit", "search", "runSubagent", "githubRepo"]
@@ -12,6 +11,13 @@ tools:
 ## Overview
 
 A cleanup and maintenance specialist that handles post-implementation tasks: archiving completed work, removing obsolete files, remediating tech debt, and closing out GitHub issues.
+
+## Model Recommendations
+
+> Model selection is at user discretion via the model picker. These suggestions are based on task complexity and cost optimization.
+
+- **GPT-4o** (0×): Default—mechanical tasks
+- **Grok Code Fast 1** (0×): Fast bulk operations
 
 **Pipeline Position**: LAST (design → research → plan → implement → review → document → cleanup)
 

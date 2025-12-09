@@ -1,7 +1,6 @@
 ---
 name: Issue-Designer
 description: "Workflow entry point for new issues - handles GitHub setup, design exploration, and documentation before planning"
-model: claude-sonnet-4-20250514
 argument-hint: "Start design work for a new GitHub issue"
 tools:
   [
@@ -34,6 +33,14 @@ handoffs:
 ## Overview
 
 **Workflow entry point** for new issues. Handles GitHub setup (branch), design exploration, and GitHub finalization (PR creation). Operates at concept level without implementation details.
+
+## Model Recommendations
+
+> Model selection is at user discretion via the model picker. These suggestions are based on task complexity and cost optimization.
+
+- **Claude Sonnet 4.5** (1×): Primary—design requires good reasoning
+- **Gemini 3 Pro** (1×, preview): When synthesizing lots of context/research
+- **GPT-4o** (0×): Simpler issues, well-defined scope
 
 **Pipeline Position**: FIRST (design → research → plan → implement → review → document → cleanup)
 

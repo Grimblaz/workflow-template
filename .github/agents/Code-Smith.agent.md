@@ -1,7 +1,6 @@
 ---
 name: Code-Smith
 description: "Focused code implementation following TDD or plan-driven approach"
-model: gpt-4o
 argument-hint: "Implement code changes based on tests or plan"
 tools:
   [
@@ -45,6 +44,15 @@ handoffs:
 ## Overview
 
 A focused implementation mode that executes code changes following approved plans. Implements the core logic but delegates test validation to test-writer and documentation updates to doc-keeper.
+
+## Model Recommendations
+
+> Model selection is at user discretion via the model picker. These suggestions are based on task complexity and cost optimization.
+
+- **GPT-4o** (0×): Default for straightforward implementation
+- **Grok Code Fast 1** (0×): When speed matters, simpler code changes
+- **Claude Sonnet 4.5** (1×): Complex implementations requiring careful reasoning
+- **GPT-5.1-Codex-Max** (1×, preview): Large, cross-cutting code changes where GPT's Codex excels
 
 ## Plan Tracking
 

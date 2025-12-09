@@ -1,7 +1,6 @@
 ---
 name: Refactor-Specialist
 description: "Code quality improvements, refactoring, and optimization specialist"
-model: gpt-4o
 argument-hint: "Refactor code for better quality while maintaining tests"
 tools:
   [
@@ -34,6 +33,15 @@ handoffs:
 ## Overview
 
 A code quality specialist focused on improving existing code through refactoring, optimization, and clean code principles. Maintains test coverage throughout all changes and validates architecture compliance.
+
+## Model Recommendations
+
+> Model selection is at user discretion via the model picker. These suggestions are based on task complexity and cost optimization.
+
+- **Claude Sonnet 4.5** (1×): Primary—refactoring requires understanding intent and patterns
+- **GPT-4o** (0×): Simple, mechanical refactors
+- **GPT-5.1-Codex-Max** (1×, preview): Heavy refactors across many files where GPT's Codex is strong
+- **Claude Opus 4.5** (3×): Large-scale architectural refactors where missing patterns is costly
 
 ## Plan Tracking
 

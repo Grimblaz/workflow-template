@@ -1,7 +1,6 @@
 ---
 name: Test-Writer
 description: "Test writing and validation specialist for high-quality behavior-focused tests"
-model: gpt-4o
 argument-hint: "Write tests, validate coverage, or fix test failures"
 tools:
   [
@@ -42,6 +41,14 @@ handoffs:
 ## Overview
 
 A specialized mode for writing high-quality, behavior-focused tests that follow clean code principles. Enforces test quality standards while maintaining readability and maintainability.
+
+## Model Recommendations
+
+> Model selection is at user discretion via the model picker. These suggestions are based on task complexity and cost optimization.
+
+- **GPT-4o** (0×): Default—straightforward test generation
+- **Claude Sonnet 4.5** (1×): Complex test scenarios, edge case identification
+- **Claude Haiku 4.5** (0.33×): Good middle ground for non-trivial tests
 
 ## Plan Tracking
 

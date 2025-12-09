@@ -1,7 +1,6 @@
 ---
 name: Code-Review-Response
 description: "Systematic response to code review feedback with categorization and delegation"
-model: gpt-4o
 argument-hint: "Analyze code review feedback and create response plan"
 tools: ["edit", "search", "runCommands", "fetch", "githubRepo", "runSubagent"]
 # Note: 'edit' tool present ONLY for TECH-DEBT.md updates. DO NOT use for fix execution.
@@ -29,6 +28,13 @@ handoffs:
 ## Overview
 
 Systematically responds to code review feedback with professionalism, clarity, and strategic thinking. Categorizes and delegates fixes - does not execute code directly.
+
+## Model Recommendations
+
+> Model selection is at user discretion via the model picker. These suggestions are based on task complexity and cost optimization.
+
+- **GPT-4o** (0×): Default—straightforward categorization task
+- **Claude Haiku 4.5** (0.33×): When slightly better reasoning helps with nuanced feedback
 
 ## Operating Modes
 

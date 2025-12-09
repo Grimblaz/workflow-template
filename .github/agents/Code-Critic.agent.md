@@ -1,7 +1,6 @@
 ---
 name: Code-Critic
 description: "Professional code review for architecture, security, and quality analysis"
-model: gpt-4o
 argument-hint: "Review code for architecture compliance, security issues, and quality standards"
 tools:
   [
@@ -38,6 +37,14 @@ handoffs:
 ## Overview
 
 A professional self-review agent that performs comprehensive analysis of code quality, architecture compliance, security vulnerabilities, and test coverage. Provides actionable, evidence-based feedback to improve code before release.
+
+## Model Recommendations
+
+> Model selection is at user discretion via the model picker. These suggestions are based on task complexity and cost optimization.
+
+- **Claude Sonnet 4.5** (1×): Primary choice—thorough analysis, catches subtle issues
+- **Claude Opus 4.5** (3×): For critical reviews (security audits, architecture validation) where single-pass accuracy matters
+- **GPT-4o** (0×): Quick sanity checks or follow-up reviews after main review
 
 ## Plan Tracking
 

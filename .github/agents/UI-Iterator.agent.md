@@ -1,7 +1,6 @@
 ---
 name: UI-Iterator
 description: "Systematic UI polish through screenshot-based iteration"
-model: claude-sonnet-4-20250514
 argument-hint: "Polish [PageName] or Polish [ComponentName] [iterations]"
 tools:
   [
@@ -35,6 +34,14 @@ handoffs:
 A systematic UI refinement mode using screenshot-based iteration. Evaluates current UI state against aesthetic criteria, proposes improvements, and implements changes through iterative polish passes.
 
 **Core Workflow**: User pastes screenshot → Agent analyzes → Agent proposes improvements → User approves → Agent implements → Repeat
+
+## Model Recommendations
+
+> Model selection is at user discretion via the model picker. These suggestions are based on task complexity and cost optimization.
+
+- **Claude Sonnet 4.5** (1×): Primary—good aesthetic judgment, understands UI patterns
+- **GPT-4o** (0×): Simple UI tweaks
+- **Claude Haiku 4.5** (0.33×): Quick iterations at low cost
 
 ## Screenshot Workflow
 

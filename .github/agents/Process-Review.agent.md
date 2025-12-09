@@ -1,7 +1,6 @@
 ---
 name: Process-Review
 description: "Meta-analysis of workflow execution to identify deviations and improvement opportunities"
-model: claude-sonnet-4-20250514
 argument-hint: "Analyze workflow execution and identify process improvements"
 tools: ["runCommands", "search", "fetch"]
 handoffs:
@@ -24,6 +23,13 @@ handoffs:
 ## Overview
 
 A meta-cognitive agent that analyzes workflow execution to identify deviations from intended processes, inefficiencies in agent handoffs, and opportunities for continuous improvement. Focuses on **how we work**, not what we build.
+
+## Model Recommendations
+
+> Model selection is at user discretion via the model picker. These suggestions are based on task complexity and cost optimization.
+
+- **Claude Sonnet 4.5** (1×): Primary—needs judgment about process quality
+- **GPT-4o** (0×): Quick process checks
 
 ## 🚨 File Modification Restrictions 🚨
 
