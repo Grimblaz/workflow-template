@@ -2,6 +2,8 @@
 
 This document defines the architectural constraints for the Order Service microservice. All agents and developers must follow these rules.
 
+These rules are provided as an example baseline for a Spring Boot microservice; when adopting this template, adjust them to match your project's actual architecture and constraints.
+
 ## Layer Architecture
 
 ### Layer Definitions
@@ -18,7 +20,7 @@ This document defines the architectural constraints for the Order Service micros
 
 ### Layer Diagram
 
-```
+```text
                     ┌──────────────┐
                     │  Controller  │
                     └──────┬───────┘
@@ -27,9 +29,9 @@ This document defines the architectural constraints for the Order Service micros
           ┌─────────│   Service    │─────────┐
           │         └──────┬───────┘         │
           │                │                 │
-   ┌──────▼───────┐ ┌──────▼───────┐ ┌───────▼──────┐
-   │    Client    │ │  Repository  │ │    Mapper    │
-   └──────────────┘ └──────────────┘ └──────────────┘
+    ┌──────▼───────┐ ┌──────▼───────┐ ┌───────▼──────┐
+    │    Client    │ │  Repository  │ │    Mapper    │
+    └──────────────┘ └──────────────┘ └──────────────┘
 ```
 
 ## Dependency Rules
@@ -85,7 +87,7 @@ public class OrderService {
 
 ### Internal vs External
 
-```
+```text
 com.example.orderservice/
 ├── controller/          # @RestController classes only
 │   └── internal/        # Internal endpoints (not exposed)

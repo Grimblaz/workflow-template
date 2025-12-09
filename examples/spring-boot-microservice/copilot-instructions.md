@@ -16,7 +16,7 @@ Microservice handling order processing for an e-commerce platform. This is an **
 
 Layered architecture following Domain-Driven Design principles:
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │                  Controllers                     │
 │            (REST API / HTTP Handling)           │
@@ -34,7 +34,7 @@ Layered architecture following Domain-Driven Design principles:
 
 ## Package Structure
 
-```
+```text
 com.example.orderservice/
 ├── controller/          # REST endpoints
 ├── service/             # Business logic
@@ -50,11 +50,13 @@ com.example.orderservice/
 ## Key Conventions
 
 ### Dependency Injection
+
 - **Always** use constructor injection
 - Use `@RequiredArgsConstructor` from Lombok
 - Avoid `@Autowired` on fields
 
 ### Naming Conventions
+
 - Controllers: `*Controller` (e.g., `OrderController`)
 - Services: `*Service` (e.g., `OrderService`)
 - Repositories: `*Repository` (e.g., `OrderRepository`)
@@ -62,17 +64,20 @@ com.example.orderservice/
 - Entities: Business domain names (e.g., `Order`, `OrderItem`)
 
 ### Error Handling
+
 - Use `@ControllerAdvice` for global exception handling
 - Return `ProblemDetail` (RFC 7807) for error responses
 - Create domain-specific exceptions extending `RuntimeException`
 
 ### API Design
+
 - Follow REST conventions
 - Use `@Valid` for request validation
 - Return appropriate HTTP status codes
 - Document with OpenAPI/Swagger annotations
 
 ### Testing
+
 - Unit tests for services (mock dependencies)
 - Integration tests for repositories (TestContainers)
 - API tests for controllers (MockMvc)
@@ -88,6 +93,7 @@ com.example.orderservice/
 ## External Dependencies
 
 When interacting with external services:
+
 - Use `RestClient` (Spring 6.1+) or `WebClient` for HTTP calls
 - Implement circuit breakers with Resilience4j
 - Define response timeout configurations

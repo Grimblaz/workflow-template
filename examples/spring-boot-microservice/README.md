@@ -67,7 +67,7 @@ Tracks known shortcuts and issues. Customize:
 
 When using these in your project:
 
-```
+```text
 your-project/
 ├── .github/
 │   ├── copilot-instructions.md    # ← From this example

@@ -133,7 +133,7 @@ When working on this codebase:
 
 ### Example Agent Workflow
 
-```
+```text
 1. Read TECH-DEBT.md before starting implementation
 2. If feature touches DEBT-002 area, consider fixing as part of work
 3. If time-constrained and introducing shortcut, document here
