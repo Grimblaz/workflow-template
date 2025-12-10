@@ -136,7 +136,7 @@
 
 ### Phase 4: Validation
 
-**Agent**: Validator-Agent
+**Agent**: [CUSTOMIZE: Test-Writer or project-specific validation agent]
 
 **Description**: Verify implementation meets all requirements.
 
@@ -222,7 +222,7 @@
 
 ### Phase 7: Documentation
 
-**Agent**: Doc-Writer
+**Agent**: Doc-Keeper
 
 **Description**: Update documentation to reflect changes.
 

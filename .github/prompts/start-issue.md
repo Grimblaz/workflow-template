@@ -76,7 +76,7 @@ When picking up a new issue:
 
 2. **Execute the checklist** systematically, using appropriate agents:
    - Analysis: Issue-Designer handles initial review
-   - Dependencies: Validator-Agent can check dependencies
+   - Dependencies: [CUSTOMIZE: Specify agent responsible for dependency checks] can check dependencies
    - Branch creation: Issue-Designer or Code-Conductor
    - Tracking: Issue-Designer sets up tracking
    - Planning: Plan-Architect creates implementation plan
