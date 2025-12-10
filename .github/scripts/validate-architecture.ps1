@@ -39,7 +39,7 @@ function Write-Failure {
     $script:FailureCount++
 }
 
-function Write-Warning {
+function Write-ValidationWarning {
     param([string]$Message)
     Write-Host "${Yellow}⚠${Reset} $Message"
 }
@@ -141,7 +141,7 @@ function Test-LayerViolations {
     #     }
     # }
     
-    Write-Warning "[CUSTOMIZE] Implement your layer violation checks here"
+    Write-ValidationWarning "[CUSTOMIZE] Implement your layer violation checks here"
 }
 
 function Test-ForbiddenDependencies {
@@ -177,7 +177,7 @@ function Test-ForbiddenDependencies {
     #     }
     # }
     
-    Write-Warning "[CUSTOMIZE] Implement your forbidden dependency checks here"
+    Write-ValidationWarning "[CUSTOMIZE] Implement your forbidden dependency checks here"
 }
 
 function Test-NamingConventions {
@@ -209,7 +209,7 @@ function Test-NamingConventions {
     #     }
     # }
     
-    Write-Warning "[CUSTOMIZE] Implement your naming convention checks here"
+    Write-ValidationWarning "[CUSTOMIZE] Implement your naming convention checks here"
 }
 
 function Test-CodeComplexity {
@@ -257,7 +257,7 @@ function Test-CodeComplexity {
     #     }
     # }
     
-    Write-Warning "[CUSTOMIZE] Implement your complexity checks here"
+    Write-ValidationWarning "[CUSTOMIZE] Implement your complexity checks here"
 }
 
 function Test-DocumentationCoverage {
@@ -280,7 +280,7 @@ function Test-DocumentationCoverage {
     #         if (Test-Path $readmePath) {
     #             Write-Success "Documentation exists: $readmePath"
     #         } else {
-    #             Write-Warning "Missing README in: $dir"
+    #             Write-ValidationWarning "Missing README in: $dir"
     #         }
     #     }
     # }
@@ -290,11 +290,11 @@ function Test-DocumentationCoverage {
     # foreach ($file in $PublicClasses) {
     #     $content = Get-Content $file.FullName -Raw
     #     if ($content -match 'public\s+class\s+' -and $content -notmatch '///\s*<summary>') {
-    #         Write-Warning "Missing XML documentation in: $($file.Name)"
+    #         Write-ValidationWarning "Missing XML documentation in: $($file.Name)"
     #     }
     # }
     
-    Write-Warning "[CUSTOMIZE] Implement your documentation checks here"
+    Write-ValidationWarning "[CUSTOMIZE] Implement your documentation checks here"
 }
 
 # ============================================================================
