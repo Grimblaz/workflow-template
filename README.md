@@ -108,7 +108,7 @@ You're ready! The agents will:
 
 This template is **production-ready** and includes everything you need to start working with AI agents:
 
-### 🤖 Agents (15+ Specialized)
+### 🤖 Agents (15 Specialized)
 
 Complete set of agent definitions in `.github/agents/`:
 
@@ -119,14 +119,14 @@ Complete set of agent definitions in `.github/agents/`:
 - **Test-Writer** - Creates comprehensive tests
 - **Refactor-Specialist** - Improves code quality
 - **Plan-Architect** - Designs implementation plans
-- **Doc-Scribe** - Maintains documentation
-- **API-Integrator** - Handles external integrations
-- **Database-Architect** - Designs data models
-- **Security-Guardian** - Reviews security concerns
-- **Performance-Optimizer** - Analyzes performance
-- **DevOps-Engineer** - CI/CD and infrastructure
-- **Code-Reviewer** - Reviews implementations
-- **QA-Strategist** - Tests and quality assurance
+- **Doc-Keeper** - Maintains documentation
+- **Code-Critic** - Reviews implementations
+- **Code-Review-Response** - Categorizes review feedback
+- **Janitor** - Handles file cleanup and organization
+- **Plan-General** - General planning assistance
+- **Process-Review** - Reviews process compliance
+- **Specification** - Helps define specifications
+- **UI-Iterator** - Polishes UI implementation
 
 ### 🎯 Skills Framework
 
