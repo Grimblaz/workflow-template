@@ -1,0 +1,324 @@
+# Template GitHub Actions CI workflow for the Copilot Workflow System.
+# This is a technology-agnostic template - customize for your specific stack.
+#
+# [CUSTOMIZE] Replace placeholder steps with your actual build, test, and lint commands.
+# [CUSTOMIZE] Adjust triggers, Node version, caching strategy, and environment variables.
+
+name: CI
+
+# [CUSTOMIZE] Modify triggers based on your branching strategy
+on:
+  push:
+    branches:
+      - main
+      - develop
+      # [CUSTOMIZE] Add other protected branches
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch: # Allow manual triggers
+
+# [CUSTOMIZE] Set environment variables for your project
+env:
+  # Example environment variables - customize for your stack
+  # NODE_ENV: production
+  # DOTNET_VERSION: '8.0.x'
+  # JAVA_VERSION: '17'
+  # PYTHON_VERSION: '3.11'
+  CI: true
+
+jobs:
+  # ============================================================================
+  # VALIDATION JOB
+  # ============================================================================
+  validate:
+    name: Validate Architecture
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for better validation
+
+      - name: Setup PowerShell
+        shell: pwsh
+        run: |
+          Write-Host "PowerShell version: $($PSVersionTable.PSVersion)"
+
+      - name: Run architecture validation
+        shell: pwsh
+        run: |
+          # Run the validation script
+          ./.github/scripts/validate-architecture.ps1
+
+          # [CUSTOMIZE] Add other validation scripts as needed
+          # Example: ./scripts/validate-dependencies.ps1
+          # Example: ./scripts/check-security.ps1
+
+  # ============================================================================
+  # BUILD & TEST JOB
+  # ============================================================================
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    # [CUSTOMIZE] Uncomment and modify for matrix testing across multiple versions
+    # strategy:
+    #   matrix:
+    #     node-version: [18.x, 20.x]
+    #     # python-version: ['3.10', '3.11', '3.12']
+    #     # java-version: ['17', '21']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ========================================================================
+      # SETUP ENVIRONMENT
+      # ========================================================================
+
+      # [CUSTOMIZE] Example: Node.js setup (uncomment if using Node.js)
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '20.x'
+      #     # node-version: ${{ matrix.node-version }} # For matrix builds
+      #     cache: 'npm' # or 'yarn', 'pnpm'
+
+      # [CUSTOMIZE] Example: Python setup (uncomment if using Python)
+      # - name: Setup Python
+      #   uses: actions/setup-python@v5
+      #   with:
+      #     python-version: '3.11'
+      #     cache: 'pip'
+
+      # [CUSTOMIZE] Example: Java setup (uncomment if using Java)
+      # - name: Setup Java
+      #   uses: actions/setup-java@v4
+      #   with:
+      #     java-version: '17'
+      #     distribution: 'temurin'
+      #     cache: 'maven' # or 'gradle'
+
+      # [CUSTOMIZE] Example: .NET setup (uncomment if using .NET)
+      # - name: Setup .NET
+      #   uses: actions/setup-dotnet@v4
+      #   with:
+      #     dotnet-version: '8.0.x'
+
+      # [CUSTOMIZE] Example: Rust setup (uncomment if using Rust)
+      # - name: Setup Rust
+      #   uses: actions-rust-lang/setup-rust-toolchain@v1
+      #   with:
+      #     toolchain: stable
+
+      # ========================================================================
+      # INSTALL DEPENDENCIES
+      # ========================================================================
+
+      - name: Install dependencies
+        run: |
+          echo "[CUSTOMIZE] Replace this with your dependency installation command"
+          # Examples:
+          # npm ci                          # Node.js with npm
+          # yarn install --frozen-lockfile  # Node.js with yarn
+          # pnpm install --frozen-lockfile  # Node.js with pnpm
+          # pip install -r requirements.txt # Python
+          # mvn install -DskipTests          # Java with Maven
+          # gradle build --no-daemon         # Java with Gradle
+          # dotnet restore                   # .NET
+          # cargo build                      # Rust
+
+          echo "Dependencies would be installed here"
+
+      # ========================================================================
+      # BUILD
+      # ========================================================================
+
+      - name: Build project
+        run: |
+          echo "[CUSTOMIZE] Replace this with your build command"
+          # Examples:
+          # npm run build              # Node.js
+          # python -m build            # Python
+          # mvn compile                # Java with Maven
+          # gradle assemble            # Java with Gradle
+          # dotnet build --no-restore  # .NET
+          # cargo build --release      # Rust
+
+          echo "Build would run here"
+
+      # [CUSTOMIZE] Example: Cache build artifacts for reuse
+      # - name: Cache build artifacts
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: |
+      #       dist/
+      #       build/
+      #       target/
+      #     key: ${{ runner.os }}-build-${{ github.sha }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-build-
+
+      # ========================================================================
+      # TEST
+      # ========================================================================
+
+      - name: Run tests
+        run: |
+          echo "[CUSTOMIZE] Replace this with your test command"
+          # Examples:
+          # npm test                        # Node.js
+          # npm run test:coverage           # Node.js with coverage
+          # pytest --cov=src tests/         # Python with pytest
+          # mvn test                        # Java with Maven
+          # gradle test                     # Java with Gradle
+          # dotnet test --no-build          # .NET
+          # cargo test                      # Rust
+
+          echo "Tests would run here"
+
+      # [CUSTOMIZE] Example: Upload test results
+      # - name: Upload test results
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: test-results
+      #     path: |
+      #       coverage/
+      #       test-results/
+
+      # [CUSTOMIZE] Example: Upload coverage to Codecov
+      # - name: Upload coverage to Codecov
+      #   if: success()
+      #   uses: codecov/codecov-action@v4
+      #   with:
+      #     files: ./coverage/coverage-final.json
+      #     flags: unittests
+      #     name: codecov-umbrella
+
+      # ========================================================================
+      # LINT & FORMAT
+      # ========================================================================
+
+      - name: Run linter
+        run: |
+          echo "[CUSTOMIZE] Replace this with your linting command"
+          # Examples:
+          # npm run lint                # Node.js with ESLint
+          # pylint src/                 # Python with pylint
+          # flake8 src/                 # Python with flake8
+          # mvn checkstyle:check        # Java with Checkstyle
+          # dotnet format --verify-no-changes  # .NET
+          # cargo clippy -- -D warnings # Rust
+
+          echo "Linter would run here"
+
+      - name: Check code formatting
+        run: |
+          echo "[CUSTOMIZE] Replace this with your formatting check command"
+          # Examples:
+          # npm run format:check        # Node.js with Prettier
+          # black --check src/          # Python with Black
+          # mvn spotless:check          # Java with Spotless
+          # dotnet format --verify-no-changes  # .NET
+          # cargo fmt -- --check        # Rust
+
+          echo "Format check would run here"
+
+  # ============================================================================
+  # SECURITY SCAN JOB (OPTIONAL)
+  # ============================================================================
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # [CUSTOMIZE] Example: Dependency vulnerability scanning
+      # - name: Run dependency audit
+      #   run: |
+      #     # npm audit                    # Node.js
+      #     # pip-audit                    # Python
+      #     # dotnet list package --vulnerable  # .NET
+      #     # cargo audit                  # Rust
+      #     echo "[CUSTOMIZE] Add dependency audit command"
+
+      # [CUSTOMIZE] Example: SAST with CodeQL
+      # - name: Initialize CodeQL
+      #   uses: github/codeql-action/init@v3
+      #   with:
+      #     languages: javascript, python, java, csharp
+
+      # - name: Perform CodeQL Analysis
+      #   uses: github/codeql-action/analyze@v3
+
+      - name: Security scan placeholder
+        run: |
+          echo "[CUSTOMIZE] Add security scanning tools"
+          echo "Examples: npm audit, Snyk, OWASP Dependency-Check, Trivy"
+
+  # ============================================================================
+  # INTEGRATION TEST JOB (OPTIONAL)
+  # ============================================================================
+  # [CUSTOMIZE] Uncomment if you have integration or E2E tests
+  # integration-test:
+  #   name: Integration Tests
+  #   runs-on: ubuntu-latest
+  #   needs: build-and-test
+  #
+  #   services:
+  #     # [CUSTOMIZE] Add required services (database, cache, etc.)
+  #     postgres:
+  #       image: postgres:15
+  #       env:
+  #         POSTGRES_PASSWORD: postgres
+  #       options: >-
+  #         --health-cmd pg_isready
+  #         --health-interval 10s
+  #         --health-timeout 5s
+  #         --health-retries 5
+  #       ports:
+  #         - 5432:5432
+  #
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
+  #
+  #     - name: Run integration tests
+  #       run: |
+  #         echo "[CUSTOMIZE] Add integration test command"
+  #         # npm run test:integration
+  #         # pytest tests/integration/
+  #         # mvn verify -Pintegration-tests
+
+  # ============================================================================
+  # STATUS CHECK JOB
+  # ============================================================================
+  # This job provides a single status check that depends on all other jobs
+  # Useful for GitHub branch protection rules
+  ci-status:
+    name: CI Status Check
+    runs-on: ubuntu-latest
+    needs:
+      - validate
+      - build-and-test
+      - security
+      # [CUSTOMIZE] Add other job dependencies here
+      # - integration-test
+    if: always()
+
+    steps:
+      - name: Check all jobs status
+        run: |
+          if [ "${{ needs.validate.result }}" != "success" ] || \
+             [ "${{ needs.build-and-test.result }}" != "success" ] || \
+             [ "${{ needs.security.result }}" != "success" ]; then
+            echo "One or more CI jobs failed"
+            exit 1
+          fi
+          echo "All CI jobs passed successfully"

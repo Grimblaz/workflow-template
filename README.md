@@ -1,6 +1,11 @@
 # Copilot Workflow Template
 
+[![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](../../releases)
+[![Ready for Production](https://img.shields.io/badge/status-production%20ready-green.svg)](../../releases)
+
 A multi-agent workflow system for GitHub Copilot, designed to orchestrate AI-assisted software development through specialized agents.
+
+> **Ready to use!** Clone this repository and immediately start working with 15+ specialized AI agents. Complete with TDD workflow skills, implementation templates, and a Spring Boot example project.
 
 ## Overview
 
@@ -18,21 +23,146 @@ This template provides a proven framework for working with AI coding agents, fea
 
 ## Quick Start
 
-### Option 1: Use as GitHub Template
+Get up and running in under 5 minutes:
+
+### 1. Get the Template
+
+**Option A: Use as GitHub Template**
 
 1. Click **"Use this template"** → **"Create a new repository"**
 2. Clone your new repository
-3. Follow the [Customization Guide](CUSTOMIZATION.md)
 
-### Option 2: Manual Setup
+**Option B: Clone Directly**
 
-1. Clone this repository
-2. Copy contents to your project
-3. Customize the agents and instructions for your domain
+```bash
+git clone https://github.com/Grimblaz/workflow-template.git
+cd workflow-template
+```
+
+
+### 2. Essential Customization (First-Time Setup)
+
+Before using agents, customize these key files:
+
+| Priority | File | Purpose | Required? |
+|----------|------|---------|-----------|
+| **HIGH** | `.github/copilot-instructions.md` | Your project context & tech stack | ✅ Yes |
+| **HIGH** | `.github/architecture-rules.md` | Your architecture patterns | ✅ Yes |
+| Medium | `skills/` | Add domain-specific skills | Recommended |
+| Low | `.github/agents/` | Tweak agent behaviors | Optional |
+
+> 📖 **See [CUSTOMIZATION.md](CUSTOMIZATION.md)** for detailed step-by-step guidance.
+
+**Quick Setup Checklist:**
+
+- [ ] Create `.github/copilot-instructions.md` (use `examples/spring-boot-microservice/copilot-instructions.md` as reference)
+- [ ] Create `.github/architecture-rules.md` (use `examples/spring-boot-microservice/architecture-rules.md` as reference)
+- [ ] Review `.github/agents/` - familiarize yourself with available agents
+- [ ] Optionally add project-specific skills to `skills/`
+
+### 3. Your First Agent Conversation
+
+Once setup is complete, start using agents immediately:
+
+**Example: Pick up an issue**
+
+```markdown
+@issue-designer
+
+Please pick up issue #42 and prepare the environment for implementation.
+```
+
+
+**Example: Start implementation**
+
+```markdown
+@code-conductor
+
+I've reviewed the design in Documents/Design/issue-42-design.md.
+Please orchestrate implementation of this feature.
+```
+
+
+**Example: Write tests first**
+
+```markdown
+@test-writer
+
+Using the TDD workflow skill, please write tests for the UserService.createUser method
+following the specification in the design doc.
+```
+
+
+> 💡 **Tip**: The `@agent-name` syntax is a convention. GitHub Copilot Chat will use the agent definitions from `.github/agents/` when you reference them in your prompts.
+
+### 4. Start Building
+
+You're ready! The agents will:
+
+- 🎯 Follow your architecture rules
+- 📝 Use your project conventions from `copilot-instructions.md`
+- 🛠️ Apply domain skills when relevant
+- ✅ Generate implementation plans and track progress
+
+## What's Included
+
+This template is **production-ready** and includes everything you need to start working with AI agents:
+
+### 🤖 Agents (15+ Specialized)
+
+Complete set of agent definitions in `.github/agents/`:
+
+- **Issue Designer** - Picks up issues, creates design docs
+- **Research Agent** - Deep research on changes
+- **Code Conductor** - Orchestrates implementation
+- **Code-Smith** - Writes production code
+- **Test-Writer** - Creates comprehensive tests
+- **Refactor-Specialist** - Improves code quality
+- **Plan-Architect** - Designs implementation plans
+- **Doc-Scribe** - Maintains documentation
+- **API-Integrator** - Handles external integrations
+- **Database-Architect** - Designs data models
+- **Security-Guardian** - Reviews security concerns
+- **Performance-Optimizer** - Analyzes performance
+- **DevOps-Engineer** - CI/CD and infrastructure
+- **Code-Reviewer** - Reviews implementations
+- **QA-Strategist** - Tests and quality assurance
+
+### 🎯 Skills Framework
+
+Reusable skill definitions in `skills/`:
+
+- **TDD Workflow** - Complete Test-Driven Development workflow with patterns, anti-patterns, quality gates, and templates
+- **Skills README** - Framework for adding your own domain-specific skills
+
+### 📋 Templates & Instructions
+
+Ready-to-use templates in `.github/`:
+
+- **Implementation Plan Template** - Standard structure for feature implementation
+- **Start Issue Prompt** - Quick-start prompts for issue-designer
+- **Tracking Format Instructions** - Standard output format for agent responses
+- **Post-PR Review Instructions** - Guidelines for after PR review
+
+### 🛠️ Scripts & Workflows
+
+Foundation for automation in `.github/`:
+
+- **Validation Scripts** - Template for test/lint validation
+- **CI Workflows** - Template for continuous integration
+
+### 📚 Example Project
+
+Complete Spring Boot microservice example in `examples/`:
+
+- `copilot-instructions.md` - Project context example
+- `architecture-rules.md` - Architecture patterns example
+- `TECH-DEBT.md` - Technical debt tracking template
+- Demonstrates how to adapt the template for your stack
 
 ## Repository Structure
 
-```
+```text
 .github/
 ├── agents/              # Agent definitions (15+ specialized agents)
 ├── instructions/        # Tracking format, PR review guidelines
@@ -45,10 +175,12 @@ skills/                  # Reusable skill definitions
 ├── README.md            # Skills framework documentation
 └── tdd-workflow/        # Example: Test-Driven Development skill
 
+examples/
+└── spring-boot-microservice/  # Complete example project
+
 Documents/
+├── Design/              # Design documents (created by agents)
 └── Development/         # Project documentation templates
-    ├── NEXT-STEPS.md    # Roadmap template
-    └── TechnicalArchitecture.md
 ```
 
 ## Key Concepts
@@ -56,6 +188,7 @@ Documents/
 ### Agents
 
 Agents are specialized AI personas defined in `.github/agents/`. Each agent has:
+
 - A specific role and expertise
 - Defined responsibilities
 - Interaction patterns with other agents
@@ -63,6 +196,7 @@ Agents are specialized AI personas defined in `.github/agents/`. Each agent has:
 ### Skills
 
 Skills are domain-specific knowledge packages in `skills/`. They provide:
+
 - Contextual information for agents
 - Best practices for specific workflows
 - Examples and patterns to follow
@@ -70,26 +204,45 @@ Skills are domain-specific knowledge packages in `skills/`. They provide:
 ### Instructions
 
 Instructions in `.github/instructions/` guide agent behavior:
+
 - Output formats (tracking, documentation)
 - Review processes
 - Quality standards
 
 ## Customization
 
-See [CUSTOMIZATION.md](CUSTOMIZATION.md) for detailed guidance on adapting this template for your project.
+**📖 [Read the Complete Customization Guide](CUSTOMIZATION.md)** for step-by-step instructions.
 
-Key customization points:
-- **`copilot-instructions.md`** - Project-specific context
-- **`architecture-rules.md`** - Your architecture patterns
-- **`skills/`** - Domain-specific knowledge
+### Quick Reference: Files to Customize
 
-Note: `copilot-instructions.md` and `architecture-rules.md` ship with the Phase 5 example deliverables and are not present earlier.
+| File | What to Customize | When |
+|------|-------------------|------|
+| `.github/copilot-instructions.md` | Project overview, tech stack, conventions | **Before first use** |
+| `.github/architecture-rules.md` | Layer structure, package organization, dependency rules | **Before first use** |
+| `skills/your-domain/` | Domain-specific patterns, examples, best practices | As needed |
+| `.github/agents/*.md` | Agent behaviors, responsibilities, interaction patterns | Optional refinement |
+| `.github/templates/*.md` | Implementation plan structure, issue templates | Optional refinement |
+| `.github/workflows/*.yml` | CI/CD pipelines, automation | When setting up CI |
+
+### Technology-Specific Adaptation
+
+All examples in this template use **Java/Spring Boot** conventions. When adapting for other stacks:
+
+- **Node.js/Express**: Replace test commands (`./gradlew test` → `npm test`), adjust layer patterns
+- **Python/Django**: Update architecture rules for Django patterns (views, models, serializers)
+- **Go**: Adapt package structure conventions, replace build commands
+- **.NET/C#**: Update for .NET patterns (Controllers, Services, Repositories)
+
+The **conceptual structure** (agents, skills, workflows) remains the same - only the concrete examples change.
+
+> 💡 **Tip**: Use the Spring Boot example in `examples/spring-boot-microservice/` as a reference for how to structure your own technology-specific customization.
 
 ## Design Philosophy
 
 ### Standalone Template with Manual Sync
 
 This template follows a **copy-and-adapt** model:
+
 - No automatic updates to consumer repositories
 - Versioned releases (tags) for upgrade reference points
 - Each project maintains ownership of customizations
@@ -105,6 +258,7 @@ This template follows a **copy-and-adapt** model:
 ## Example Projects
 
 This template includes example configurations for:
+
 - **Spring Boot Microservice** - Layered architecture (Controller → Service → Repository)
 
 > **Note**: All concrete examples throughout this template (test commands, quality gates, code patterns) use **Java/Spring Boot** conventions. When adapting for other stacks (Node.js, Python, etc.), replace these with your framework's equivalents while keeping the same conceptual structure.
@@ -116,6 +270,7 @@ The examples demonstrate how agents and skills work in practice, serving as a re
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 Ways to contribute:
+
 - Report issues with agent definitions
 - Share improvements to prompts
 - Add new skill definitions
@@ -124,6 +279,7 @@ Ways to contribute:
 ## Versioning
 
 This project uses semantic versioning:
+
 - **Major** - Breaking changes to agent interfaces
 - **Minor** - New agents, skills, or features
 - **Patch** - Bug fixes and documentation
