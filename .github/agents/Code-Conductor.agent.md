@@ -38,7 +38,7 @@ YOU MUST NEVER:
 
 YOU MUST ALWAYS:
 
-- Call runSubagent to delegate ALL code changes to specialist agents
+- Call the agent tool to delegate ALL code changes to specialist agents
 - Only use read_file, grep_search, semantic_search for investigation
 - Only use run_in_terminal for validation commands (npm test, npm run lint, etc.)
 
@@ -46,15 +46,15 @@ If you find yourself about to make a code change directly, STOP and call the app
 </stopping_rules>
 
 <critical_rules>
-BEFORE calling runSubagent, you MUST:
+BEFORE calling the agent tool, you MUST:
 
-1. **Check if runSubagent is available**: If you get "Tool runSubagent is currently disabled" error, IMMEDIATELY inform the user:
-   "⚠️ The runSubagent tool is currently disabled. This is a known bug with an easy fix. Please re-enable it so I can call the specialist agent."
+1. **Check if agent is available**: If you get "Tool agent is currently disabled" error, IMMEDIATELY inform the user:
+  "⚠️ The agent tool is currently disabled. This is a known bug with an easy fix. Please re-enable it so I can call the specialist agent."
 
 2. **Announce which agent you're calling**: Format: "Calling @{agent-name} for {phase description}..."
-   Example: "Calling @Test-Writer for Phase 1: Write unit tests..."
-   This announcement MUST appear in your response BEFORE the tool call.
-   </critical_rules>
+  Example: "Calling @Test-Writer for Phase 1: Write unit tests..."
+  This announcement MUST appear in your response BEFORE the tool call.
+  </critical_rules>
 
 ## Core Workflow
 
@@ -70,7 +70,7 @@ BEFORE calling runSubagent, you MUST:
    - Identify appropriate specialist agent
    - Extract necessary context
    - **ANNOUNCE to user**: "Calling @{Agent-Name} for {phase}..." (BEFORE making tool call)
-   - Call specialist via runSubagent with focused instructions
+  - Call specialist via the agent tool with focused instructions
    - **Spot-check artifacts**: Use grep_search or read_file to verify key changes (method signatures, exports, etc.)
    - Review returned artifacts for correctness
    - If a specialist does a task that's not their responsibility, retry with clearer instructions
@@ -167,7 +167,7 @@ Match phase type to specialist agent by analyzing phase name/description for key
 - Agent: Code-Review-Response
 - **SCOPE**: Categorizes feedback into actionable items (READ-ONLY, no edits)
 - Note: This agent categorizes feedback (✅ Fix Now / 📋 Tech Debt / ❌ Disagree) and returns action plans to Code-Conductor
-- **IMPORTANT**: Subagents cannot delegate (no nested runSubagent calls). Code-Review-Response returns the categorized plan, then Code-Conductor delegates fixes to appropriate specialists.
+- **IMPORTANT**: Subagents cannot delegate (no nested agent calls). Code-Review-Response returns the categorized plan, then Code-Conductor delegates fixes to appropriate specialists.
 - **TRIGGER**: Automatically called after Code-Critic completes. Do NOT wait for user to request it.
 
 **Documentation Activities:**
@@ -262,10 +262,10 @@ When orchestrating validation, always use this order:
 - Identify files/systems involved
 - Gather any dependencies from previous phases
 
-**c) Call Specialist via runSubagent**
+**c) Call Specialist via agent tool**
 
 1. **First, announce to user** which agent you're calling (e.g., "Calling @Test-Writer for Phase 1...")
-2. **Then, invoke runSubagent** with focused instructions
+2. **Then, invoke the agent tool** with focused instructions
    - Provide focused instructions for current phase only
    - Include necessary context (file paths, requirements, constraints)
    - Do NOT provide entire plan (overwhelming context)
