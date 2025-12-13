@@ -62,8 +62,8 @@ function Test-DirectoryStructure {
     
     # [CUSTOMIZE] Define your required directories
     $RequiredDirectories = @(
-        "agents"
-        "skills"
+        ".github/agents"
+        ".claude/skills"
         "examples"
         ".github"
     )
