@@ -4,14 +4,14 @@ description: "Code quality improvements, refactoring, and optimization specialis
 argument-hint: "Refactor code for better quality while maintaining tests"
 tools:
   [
-    "runCommands",
+    "execute/getTerminalOutput", "execute/runInTerminal", "read/terminalLastCommand", "read/terminalSelection",
     "edit",
     "search",
-    "runSubagent",
-    "usages",
-    "problems",
-    "testFailure",
-    "changes",
+    "agent",
+    "search/usages",
+    "read/problems",
+    "execute/testFailure",
+    "search/changes",
   ]
 handoffs:
   - label: Re-Validate Tests

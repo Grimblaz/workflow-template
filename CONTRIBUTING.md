@@ -2,6 +2,27 @@
 
 Thank you for your interest in contributing! This template aims to help teams work effectively with AI coding agents.
 
+## Setup
+
+For the best experience with this workflow template:
+
+### Required
+
+- **VS Code 1.107+** (November 2025 release or later)
+- GitHub Copilot extension
+
+### Recommended Settings
+
+Enable the built-in GitHub MCP server for seamless issue and PR workflows:
+
+```json
+{
+  "github.copilot.chat.githubMcpServer.enabled": true
+}
+```
+
+This enables agents to interact directly with GitHub issues and PRs without external MCP server configuration.
+
 ## Ways to Contribute
 
 ### Report Issues

@@ -25,6 +25,8 @@ This template provides a proven framework for working with AI coding agents, fea
 
 Get up and running in under 5 minutes:
 
+> **Requirements**: VS Code 1.107+ recommended for automatic skill discovery from `.claude/skills/`. See [CONTRIBUTING.md](CONTRIBUTING.md#setup) for setup details.
+
 ### 1. Get the Template
 
 **Option A: Use as GitHub Template**
@@ -48,7 +50,7 @@ Before using agents, customize these key files:
 |----------|------|---------|-----------|
 | **HIGH** | `.github/copilot-instructions.md` | Your project context & tech stack | ✅ Yes |
 | **HIGH** | `.github/architecture-rules.md` | Your architecture patterns | ✅ Yes |
-| Medium | `skills/` | Add domain-specific skills | Recommended |
+| Medium | `.claude/skills/` | Add domain-specific skills | Recommended |
 | Low | `.github/agents/` | Tweak agent behaviors | Optional |
 
 > 📖 **See [CUSTOMIZATION.md](CUSTOMIZATION.md)** for detailed step-by-step guidance.
@@ -58,7 +60,7 @@ Before using agents, customize these key files:
 - [ ] Create `.github/copilot-instructions.md` (use `examples/spring-boot-microservice/copilot-instructions.md` as reference)
 - [ ] Create `.github/architecture-rules.md` (use `examples/spring-boot-microservice/architecture-rules.md` as reference)
 - [ ] Review `.github/agents/` - familiarize yourself with available agents
-- [ ] Optionally add project-specific skills to `skills/`
+- [ ] Optionally add project-specific skills to `.claude/skills/`
 
 ### 3. Your First Agent Conversation
 
@@ -130,7 +132,7 @@ Complete set of agent definitions in `.github/agents/`:
 
 ### 🎯 Skills Framework
 
-Reusable skill definitions in `skills/`:
+Reusable skill definitions in `.claude/skills/`:
 
 - **TDD Workflow** - Complete Test-Driven Development workflow with patterns, anti-patterns, quality gates, and templates
 - **Skills README** - Framework for adding your own domain-specific skills
@@ -171,7 +173,7 @@ Complete Spring Boot microservice example in `examples/`:
 ├── scripts/             # Validation scripts
 └── workflows/           # CI/CD workflow templates
 
-skills/                  # Reusable skill definitions
+.claude/skills/          # Reusable skill definitions
 ├── README.md            # Skills framework documentation
 └── tdd-workflow/        # Example: Test-Driven Development skill
 
@@ -195,7 +197,7 @@ Agents are specialized AI personas defined in `.github/agents/`. Each agent has:
 
 ### Skills
 
-Skills are domain-specific knowledge packages in `skills/`. They provide:
+Skills are domain-specific knowledge packages in `.claude/skills/`. They provide:
 
 - Contextual information for agents
 - Best practices for specific workflows
@@ -219,7 +221,7 @@ Instructions in `.github/instructions/` guide agent behavior:
 |------|-------------------|------|
 | `.github/copilot-instructions.md` | Project overview, tech stack, conventions | **Before first use** |
 | `.github/architecture-rules.md` | Layer structure, package organization, dependency rules | **Before first use** |
-| `skills/your-domain/` | Domain-specific patterns, examples, best practices | As needed |
+| `.claude/skills/your-domain/` | Domain-specific patterns, examples, best practices | As needed |
 | `.github/agents/*.md` | Agent behaviors, responsibilities, interaction patterns | Optional refinement |
 | `.github/templates/*.md` | Implementation plan structure, issue templates | Optional refinement |
 | `.github/workflows/*.yml` | CI/CD pipelines, automation | When setting up CI |

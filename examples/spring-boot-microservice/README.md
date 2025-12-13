@@ -98,4 +98,4 @@ your-project/
 
 - [Main Customization Guide](../../CUSTOMIZATION.md)
 - [Agent Definitions](../../.github/agents/)
-- [TDD Workflow Skill](../../skills/tdd-workflow/)
+- [TDD Workflow Skill](../../.claude/skills/tdd-workflow/)

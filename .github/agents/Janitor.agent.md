@@ -3,7 +3,7 @@ name: Janitor
 description: "Cleanup and tech debt remediation specialist"
 argument-hint: "Clean up code, archive completed work, or remediate tech debt"
 tools:
-  ["runCommands", "github/*", "edit", "search", "runSubagent", "githubRepo"]
+  ["execute/getTerminalOutput", "execute/runInTerminal", "read/terminalLastCommand", "read/terminalSelection", "github/*", "edit", "search", "agent", "web/githubRepo"]
 ---
 
 # Janitor Agent

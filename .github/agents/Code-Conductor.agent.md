@@ -3,7 +3,7 @@ name: Code-Conductor
 description: "Plan-driven workflow orchestrator that executes multi-step implementations autonomously"
 argument-hint: "Describe the task or provide plan document path"
 tools:
-  ['edit', 'search', 'runCommands', 'runTasks', 'problems', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runSubagent']
+  ['edit', 'search', 'execute/getTerminalOutput', 'execute/runInTerminal', 'read/terminalLastCommand', 'read/terminalSelection', 'execute/createAndRunTask', 'execute/getTaskOutput', 'execute/runTask', 'read/problems', 'execute/testFailure', 'vscode/openSimpleBrowser', 'web/fetch', 'web/githubRepo', 'vscode/extensions', 'todo', 'agent']
 ---
 
 # Code Conductor Agent

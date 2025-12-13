@@ -5,13 +5,13 @@ argument-hint: Outline the goal or problem to research
 tools:
   [
     "search",
-    "runSubagent",
-    "usages",
-    "problems",
-    "changes",
-    "testFailure",
-    "fetch",
-    "githubRepo",
+    "agent",
+    "search/usages",
+    "read/problems",
+    "search/changes",
+    "execute/testFailure",
+    "web/fetch",
+    "web/githubRepo",
   ]
 handoffs:
   - label: Start Implementation

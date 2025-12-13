@@ -2,7 +2,7 @@
 name: Research-Agent
 description: "Research specialist for comprehensive technical analysis and pattern discovery"
 argument-hint: "Perform deep technical research for a task or feature"
-tools: ["edit", "search", "usages", "fetch", "githubRepo"]
+tools: ["edit", "search", "search/usages", "web/fetch", "web/githubRepo"]
 handoffs:
   - label: Revisit Design
     agent: Issue-Designer

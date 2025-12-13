@@ -4,14 +4,14 @@ description: "Test writing and validation specialist for high-quality behavior-f
 argument-hint: "Write tests, validate coverage, or fix test failures"
 tools:
   [
-    "runCommands",
+    "execute/getTerminalOutput", "execute/runInTerminal", "read/terminalLastCommand", "read/terminalSelection",
     "edit",
     "search",
-    "runSubagent",
-    "usages",
-    "problems",
-    "testFailure",
-    "changes",
+    "agent",
+    "search/usages",
+    "read/problems",
+    "execute/testFailure",
+    "search/changes",
   ]
 handoffs:
   - label: Implement Code

@@ -6,12 +6,15 @@ tools:
   [
     "edit",
     "search",
-    "runCommands",
+    "execute/getTerminalOutput",
+    "execute/runInTerminal",
+    "read/terminalLastCommand",
+    "read/terminalSelection",
     "github/*",
-    "openSimpleBrowser",
-    "fetch",
-    "githubRepo",
-    "runSubagent",
+    "vscode/openSimpleBrowser",
+    "web/fetch",
+    "web/githubRepo",
+    "agent",
   ]
 handoffs:
   - label: Research Details
@@ -84,12 +87,12 @@ Issue → Branch → Design → Commit design doc → Push → PR
 
 **BEFORE researching domain specifics**, load the appropriate Skill:
 
-1. **For domain knowledge**: Read `skills/{domain}/SKILL.md` first
+1. **For domain knowledge**: Read `.claude/skills/{domain}/SKILL.md` first
 
    - Answer the intake question to get directed to the right reference
    - Use targeted reference files instead of grep-searching docs
 
-2. **For TDD workflow**: Read `skills/tdd-workflow/SKILL.md` (if relevant)
+2. **For TDD workflow**: Read `.claude/skills/tdd-workflow/SKILL.md` (if relevant)
 
 **Why**: Skills provide curated, targeted knowledge. Grep-searching docs works but is less efficient and may miss context.
 
