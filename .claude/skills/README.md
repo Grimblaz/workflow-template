@@ -31,7 +31,7 @@ Skills use a router pattern:
 
 ## How to Use a Skill
 
-1. **Load the router**: Read `skills/{skill-name}/SKILL.md`
+1. **Load the router**: Read `.claude/skills/{skill-name}/SKILL.md`
 2. **Answer the intake question**: The router asks what you need
 3. **Load specific reference**: Based on response, load the targeted file
 4. **Follow workflows**: Use workflow files for step-by-step procedures
@@ -40,9 +40,9 @@ Skills use a router pattern:
 
 ```text
 Agent: I need to write tests for a new feature
-1. Read skills/tdd-workflow/SKILL.md
+1. Read .claude/skills/tdd-workflow/SKILL.md
 2. Identify phase: "Write tests" → workflows/write-tests-first.md
-3. Read skills/tdd-workflow/workflows/write-tests-first.md
+3. Read .claude/skills/tdd-workflow/workflows/write-tests-first.md
 4. Follow the RED phase workflow
 ```
 
@@ -61,7 +61,7 @@ skill-name/
 
 To add a domain-specific skill:
 
-1. Create directory: `skills/{your-skill-name}/`
+1. Create directory: `.claude/skills/{your-skill-name}/`
 2. Create `SKILL.md` with:
    - Overview of the skill domain
    - Intake questions (what does the user need?)

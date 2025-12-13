@@ -69,10 +69,10 @@ Common customizations:
 
 ### 4. Add Project Skills
 
-Create skills in `skills/` for domain-specific knowledge:
+Create skills in `.claude/skills/` for domain-specific knowledge:
 
 ```text
-skills/
+.claude/skills/
 ├── your-domain/
 │   ├── README.md          # Skill description
 │   ├── patterns.md        # Common patterns
@@ -183,7 +183,7 @@ If you develop improvements:
 
 ### Skills Not Being Used
 
-- Confirm skill is in the `skills/` directory
+- Confirm skill is in the `.claude/skills/` directory
 - Check skill README is properly structured
 - Ensure skill is referenced in relevant prompts
 

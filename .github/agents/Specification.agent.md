@@ -2,7 +2,7 @@
 name: Specification
 description: "Generate or update specification documents for new or existing functionality."
 argument-hint: "Create formal specification document"
-tools: ["runCommands", "edit", "search", "fetch"]
+tools: ["execute/getTerminalOutput", "execute/runInTerminal", "read/terminalLastCommand", "read/terminalSelection", "edit", "search", "web/fetch"]
 ---
 
 # Specification Agent

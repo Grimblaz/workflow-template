@@ -6,15 +6,15 @@ tools:
   [
     "edit",
     "search",
-    "runCommands",
+    "execute/getTerminalOutput", "execute/runInTerminal", "read/terminalLastCommand", "read/terminalSelection",
     "github/*",
-    "vscodeAPI",
-    "changes",
-    "openSimpleBrowser",
-    "fetch",
-    "extensions",
-    "todos",
-    "runSubagent",
+    "vscode/vscodeAPI",
+    "search/changes",
+    "vscode/openSimpleBrowser",
+    "web/fetch",
+    "vscode/extensions",
+    "todo",
+    "agent",
   ]
 handoffs:
   - label: Implement UI Changes

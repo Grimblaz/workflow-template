@@ -4,13 +4,13 @@ description: "Focused code implementation following TDD or plan-driven approach"
 argument-hint: "Implement code changes based on tests or plan"
 tools:
   [
-    "runCommands",
+    "execute/getTerminalOutput", "execute/runInTerminal", "read/terminalLastCommand", "read/terminalSelection",
     "edit",
     "search",
-    "usages",
-    "problems",
-    "changes",
-    "testFailure",
+    "search/usages",
+    "read/problems",
+    "search/changes",
+    "execute/testFailure",
   ]
 handoffs:
   - label: Create Plan

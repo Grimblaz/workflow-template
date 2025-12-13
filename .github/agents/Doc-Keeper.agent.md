@@ -2,7 +2,7 @@
 name: Doc-Keeper
 description: "Documentation finalization, accuracy verification, and obsolete content removal"
 argument-hint: "Update documentation to match implementation"
-tools: ["runCommands", "edit", "search", "runSubagent", "fetch"]
+tools: ["execute/getTerminalOutput", "execute/runInTerminal", "read/terminalLastCommand", "read/terminalSelection", "edit", "search", "agent", "web/fetch"]
 handoffs:
   - label: Cleanup & Archive
     agent: Janitor

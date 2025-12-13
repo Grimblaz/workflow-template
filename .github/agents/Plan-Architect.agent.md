@@ -4,15 +4,15 @@ description: "Implementation plan architect - defines requirements and constrain
 argument-hint: "Create or update implementation plan for a feature or bug fix"
 tools:
   [
-    "runCommands",
+    "execute/getTerminalOutput", "execute/runInTerminal", "read/terminalLastCommand", "read/terminalSelection",
     "edit",
     "search",
-    "runSubagent",
-    "usages",
-    "problems",
-    "changes",
-    "testFailure",
-    "fetch",
+    "agent",
+    "search/usages",
+    "read/problems",
+    "search/changes",
+    "execute/testFailure",
+    "web/fetch",
   ]
 handoffs:
   - label: Write Tests (TDD)

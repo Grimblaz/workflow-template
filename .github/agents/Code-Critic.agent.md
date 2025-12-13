@@ -3,16 +3,7 @@ name: Code-Critic
 description: "Professional code review for architecture, security, and quality analysis"
 argument-hint: "Review code for architecture compliance, security issues, and quality standards"
 tools:
-  [
-    "runCommands",
-    "edit",
-    "search",
-    "runSubagent",
-    "problems",
-    "changes",
-    "testFailure",
-    "fetch",
-  ]
+  ['execute/testFailure', 'execute/getTerminalOutput', 'execute/runInTerminal', 'read/problems', 'read/readFile', 'read/terminalSelection', 'read/terminalLastCommand', 'edit', 'search', 'web/fetch', 'agent']
 handoffs:
   - label: Respond to Review
     agent: Code-Review-Response
