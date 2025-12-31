@@ -25,9 +25,16 @@ Skills use a router pattern:
 
 ## Available Skills
 
-| Skill          | Purpose                                       | Status    |
-| -------------- | --------------------------------------------- | --------- |
-| `tdd-workflow` | Test-Driven Development process and standards | ✅ Example |
+| Skill | Purpose | Status |
+|-------|---------|--------|
+| `tdd-workflow` | TDD process knowledge and workflow guidance | ✅ Included |
+| `brainstorming` | Structured Socratic questioning for exploring ideas | ✅ Included |
+| `frontend-design` | Distinctive UI design guidance | ✅ Included |
+| `ui-testing` | Resilient React component testing | ✅ Included |
+| `skill-creator` | Guide for creating new skills | ✅ Included |
+| `systematic-debugging` | 4-phase debugging process (Observe, Hypothesize, Test, Fix) | ✅ Included |
+| `verification-before-completion` | Evidence-based verification checklist | ✅ Included |
+| `software-architecture` | Clean Architecture and SOLID principles | ✅ Included |
 
 ## How to Use a Skill
 
@@ -46,6 +53,20 @@ Agent: I need to write tests for a new feature
 4. Follow the RED phase workflow
 ```
 
+### VS Code 1.107+ Auto-Discovery
+
+Skills with a `description` field in SKILL.md frontmatter are automatically discovered:
+
+```yaml
+---
+name: my-skill
+description: What the skill does AND when to use it. This triggers discovery.
+---
+```
+
+**Supported frontmatter fields**: `name`, `description` only  
+**Not supported in VS Code**: `allowed-tools` (use Claude Desktop for this)
+
 ## Skill Structure
 
 ```text
@@ -59,19 +80,21 @@ skill-name/
 
 ## Creating New Skills
 
-To add a domain-specific skill:
+Use the `skill-creator` skill for step-by-step guidance:
+
+```text
+@skill-creator Help me create a new skill for [domain]
+```
+
+**Quick reference**:
 
 1. Create directory: `.claude/skills/{your-skill-name}/`
-2. Create `SKILL.md` with:
-   - Overview of the skill domain
-   - Intake questions (what does the user need?)
-   - Routing table (which file for which need)
-   - File index (what's available)
+2. Create `SKILL.md` with required frontmatter (`name` + `description`)
 3. Add workflows, references, and templates as needed
 4. Update this README with the new skill
 
-See `tdd-workflow/` for a complete example.
+See `skill-creator/SKILL.md` for detailed guidance and `tdd-workflow/` for a complete example.
 
 ## Customization
 
-> **Note**: The `tdd-workflow` skill uses Java/Spring Boot examples (JUnit and Gradle commands). Adapt the commands and patterns for your technology stack while keeping the conceptual structure.
+> **Note**: Skills like `tdd-workflow` and `ui-testing` use specific technology examples (Java/Spring Boot, React). Adapt the commands and patterns for your technology stack while keeping the conceptual structure.

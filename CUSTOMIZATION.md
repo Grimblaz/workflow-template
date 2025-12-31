@@ -69,15 +69,35 @@ Common customizations:
 
 ### 4. Add Project Skills
 
-Create skills in `.claude/skills/` for domain-specific knowledge:
+Create skills in `.claude/skills/` for domain-specific knowledge.
+
+**Use the skill-creator skill for guidance:**
+
+```text
+@skill-creator Help me create a skill for [your domain]
+```
+
+**Required structure:**
 
 ```text
 .claude/skills/
-├── your-domain/
-│   ├── README.md          # Skill description
-│   ├── patterns.md        # Common patterns
-│   └── examples/          # Code examples
+├── your-skill/
+│   ├── SKILL.md          # Required: Router with frontmatter
+│   ├── workflows/        # Step-by-step procedures
+│   ├── references/       # Domain knowledge docs
+│   └── templates/        # Output structures
 ```
+
+**Required SKILL.md frontmatter (VS Code 1.107+):**
+
+```yaml
+---
+name: your-skill-name
+description: What it does AND when to use it. Triggers skill discovery.
+---
+```
+
+> **Note**: Only `name` and `description` are supported in VS Code. `allowed-tools` is not supported.
 
 ### 5. Configure Templates
 
@@ -153,7 +173,7 @@ Keep track of which template version you started from:
 
 ```markdown
 <!-- In your README or a TEMPLATE-VERSION file -->
-Based on workflow-template v1.0.0
+Based on workflow-template v1.2.0
 ```
 
 ### Upgrading
@@ -183,9 +203,10 @@ If you develop improvements:
 
 ### Skills Not Being Used
 
-- Confirm skill is in the `.claude/skills/` directory
-- Check skill README is properly structured
-- Ensure skill is referenced in relevant prompts
+- Confirm skill has `SKILL.md` with valid frontmatter (`name` + `description`)
+- Check skill is in the `.claude/skills/` directory
+- Ensure `description` field is meaningful (triggers VS Code 1.107+ discovery)
+- Reference skill with `@skill-name` in prompts
 
 ### CI/CD Failures
 

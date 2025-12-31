@@ -1,14 +1,9 @@
-# TDD Workflow Skill
-
 ---
-
 name: tdd-workflow
-version: 1.0.0
 description: Test-Driven Development process knowledge, quality standards, and workflow guidance
-domain: development-process
-dependencies: []
-
 ---
+
+# TDD Workflow Skill
 
 ## Overview
 

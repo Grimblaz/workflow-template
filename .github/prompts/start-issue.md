@@ -200,5 +200,5 @@ Then proceed to Phase 1: Research & Planning.
 
 ---
 
-**Last Updated**: December 9, 2025
-**Template Version**: 1.0.0
+**Last Updated**: December 31, 2025
+**Template Version**: 1.1.0
