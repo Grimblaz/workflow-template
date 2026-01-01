@@ -190,7 +190,7 @@ Complete Spring Boot microservice example in `examples/`:
 ├── frontend-design/     # UI design guidance
 ├── ui-testing/          # React component testing
 ├── skill-creator/       # Creating new skills
-├── systematic-debugging/# 4-phase debugging
+├── systematic-debugging/ # 4-phase debugging
 ├── verification-before-completion/  # Completion checklist
 └── software-architecture/  # Clean Architecture & SOLID
 
