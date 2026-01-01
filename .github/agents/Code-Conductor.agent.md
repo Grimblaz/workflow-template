@@ -3,7 +3,25 @@ name: Code-Conductor
 description: "Plan-driven workflow orchestrator that executes multi-step implementations autonomously"
 argument-hint: "Describe the task or provide plan document path"
 tools:
-  ['edit', 'search', 'execute/getTerminalOutput', 'execute/runInTerminal', 'read/terminalLastCommand', 'read/terminalSelection', 'execute/createAndRunTask', 'execute/getTaskOutput', 'execute/runTask', 'read/problems', 'execute/testFailure', 'vscode/openSimpleBrowser', 'web/fetch', 'web/githubRepo', 'vscode/extensions', 'todo', 'agent']
+  [
+    "edit",
+    "search",
+    "execute/getTerminalOutput",
+    "execute/runInTerminal",
+    "read/terminalLastCommand",
+    "read/terminalSelection",
+    "execute/createAndRunTask",
+    "execute/getTaskOutput",
+    "execute/runTask",
+    "read/problems",
+    "execute/testFailure",
+    "vscode/openSimpleBrowser",
+    "web/fetch",
+    "web/githubRepo",
+    "vscode/extensions",
+    "todo",
+    "agent",
+  ]
 ---
 
 # Code Conductor Agent
@@ -49,12 +67,12 @@ If you find yourself about to make a code change directly, STOP and call the app
 BEFORE calling the agent tool, you MUST:
 
 1. **Check if agent is available**: If you get "Tool agent is currently disabled" error, IMMEDIATELY inform the user:
-  "⚠️ The agent tool is currently disabled. This is a known bug with an easy fix. Please re-enable it so I can call the specialist agent."
+   "⚠️ The agent tool is currently disabled. This is a known bug with an easy fix. Please re-enable it so I can call the specialist agent."
 
 2. **Announce which agent you're calling**: Format: "Calling @{agent-name} for {phase description}..."
-  Example: "Calling @Test-Writer for Phase 1: Write unit tests..."
-  This announcement MUST appear in your response BEFORE the tool call.
-  </critical_rules>
+   Example: "Calling @Test-Writer for Phase 1: Write unit tests..."
+   This announcement MUST appear in your response BEFORE the tool call.
+   </critical_rules>
 
 ## Core Workflow
 
@@ -65,7 +83,8 @@ BEFORE calling the agent tool, you MUST:
    - **Check GitHub Issue**: Design docs are linked in issue comments (look for "Design Phase Complete" comment with doc path)
    - **Turn the design into detailed research**: A design doc is not the detailed research needed for implementation; ask Research-Agent to create a research document, then Plan-Architect to create plan
 3. **Track Current Phase**: Identify active phase and extract context
-4. **Execute Phase**: For each phase:
+4. **Check Skills**: Skills in `.claude/skills/` may provide relevant guidance for specialists
+5. **Execute Phase**: For each phase:
    - **Update plan**: Mark phase as "IN PROGRESS" before starting
    - Identify appropriate specialist agent
    - Extract necessary context

@@ -1,6 +1,6 @@
 # Copilot Workflow Template
 
-[![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](../../releases)
+[![Version](https://img.shields.io/badge/version-v1.2.0-blue.svg)](../../releases)
 [![Ready for Production](https://img.shields.io/badge/status-production%20ready-green.svg)](../../releases)
 
 A multi-agent workflow system for GitHub Copilot, designed to orchestrate AI-assisted software development through specialized agents.
@@ -130,12 +130,22 @@ Complete set of agent definitions in `.github/agents/`:
 - **Specification** - Helps define specifications
 - **UI-Iterator** - Polishes UI implementation
 
-### 🎯 Skills Framework
+### 🎯 Skills Framework (8 Skills)
 
 Reusable skill definitions in `.claude/skills/`:
 
-- **TDD Workflow** - Complete Test-Driven Development workflow with patterns, anti-patterns, quality gates, and templates
-- **Skills README** - Framework for adding your own domain-specific skills
+| Skill | Purpose |
+|-------|---------|
+| **tdd-workflow** | TDD process knowledge and workflow guidance |
+| **brainstorming** | Structured Socratic questioning for exploring ideas |
+| **frontend-design** | Distinctive UI design guidance |
+| **ui-testing** | Resilient React component testing |
+| **skill-creator** | Guide for creating new skills |
+| **systematic-debugging** | 4-phase debugging process |
+| **verification-before-completion** | Evidence-based verification checklist |
+| **software-architecture** | Clean Architecture and SOLID principles |
+
+> **VS Code 1.107+**: Skills are auto-discovered from `.claude/skills/` via the `description` frontmatter field.
 
 ### 📋 Templates & Instructions
 
@@ -173,9 +183,16 @@ Complete Spring Boot microservice example in `examples/`:
 ├── scripts/             # Validation scripts
 └── workflows/           # CI/CD workflow templates
 
-.claude/skills/          # Reusable skill definitions
+.claude/skills/          # Reusable skill definitions (8 skills)
 ├── README.md            # Skills framework documentation
-└── tdd-workflow/        # Example: Test-Driven Development skill
+├── tdd-workflow/        # Test-Driven Development
+├── brainstorming/       # Socratic questioning
+├── frontend-design/     # UI design guidance
+├── ui-testing/          # React component testing
+├── skill-creator/       # Creating new skills
+├── systematic-debugging/ # 4-phase debugging
+├── verification-before-completion/  # Completion checklist
+└── software-architecture/  # Clean Architecture & SOLID
 
 examples/
 └── spring-boot-microservice/  # Complete example project

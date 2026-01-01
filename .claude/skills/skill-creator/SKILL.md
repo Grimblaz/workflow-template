@@ -1,0 +1,197 @@
+---
+name: skill-creator
+description: Guide for creating new skills in this system with proper frontmatter format. Use when adding new skills, updating skill templates, or reviewing skill structure.
+---
+
+# Skill Creator
+
+Guide for creating new skills with proper structure and VS Code 1.107+ compatible frontmatter.
+
+## When to Use
+
+- Creating a new skill for the project
+- Reviewing existing skills for compliance
+- Updating skill templates
+- Onboarding contributors to skill creation
+
+## Required Frontmatter Format
+
+```markdown
+---
+name: skill-name-kebab-case
+description: What the skill does AND when to use it. This description triggers skill discovery in chat.
+---
+```
+
+**Important**: 
+- `name` and `description` are the only supported frontmatter fields
+- No `allowed-tools` or other fields—they will be ignored
+- Description should include usage triggers for discoverability
+
+## Directory Structure
+
+```
+.claude/skills/
+└── {skill-name}/
+    ├── SKILL.md          # Required: Main skill file with frontmatter
+    ├── reference.md      # Optional: Detailed reference material
+    ├── templates.md      # Optional: Code/document templates
+    └── examples/         # Optional: Example files
+        └── ...
+```
+
+## Skill Template
+
+```markdown
+---
+name: {skill-name}
+description: {What it does}. Use when {trigger conditions}.
+---
+
+# {Skill Title}
+
+Brief overview of the skill's purpose.
+
+## When to Use
+
+- Bullet list of situations
+- That trigger this skill
+- Be specific for discoverability
+
+## Core Content
+
+Main guidance, principles, or process.
+
+### Subsections as Needed
+
+Organize by user goals, not by internal structure.
+
+## Project-Specific Configuration
+
+[CUSTOMIZE] Add project-specific details:
+- Configuration files to modify
+- Team conventions to follow
+- Tools and paths used
+
+## Quick Reference
+
+| Item | Description |
+|------|-------------|
+| Key concept | Brief explanation |
+
+## See Also
+
+- [Related supporting file](./related-file.md)
+- External reference links
+```
+
+## Writing Guidelines
+
+### Description Field (Critical for Discovery)
+
+The description determines when the skill appears in suggestions.
+
+**Good descriptions**:
+```yaml
+description: Structured debugging process using observe-hypothesize-test-fix methodology. Use when debugging complex issues, investigating flaky tests, or tracking down root causes.
+
+description: Guide for resilient UI component testing. Use when writing React tests, fixing flaky tests, or reviewing test code.
+```
+
+**Bad descriptions**:
+```yaml
+description: Debugging guide.  # Too vague, poor discoverability
+
+description: This skill helps with testing things.  # Unclear scope
+```
+
+### Content Principles
+
+1. **Be actionable**: Provide steps, not just concepts
+2. **Use `[CUSTOMIZE]` markers**: For project-specific placeholders
+3. **Keep SKILL.md concise**: Route to supporting files for details
+4. **Template-generic language**: No repo-specific references
+5. **Include "When to Use"**: Explicit trigger conditions
+
+### Customization Markers
+
+Use `[CUSTOMIZE]` for sections that need project adaptation:
+
+```markdown
+## Project Configuration
+
+[CUSTOMIZE] Add your project's specific:
+- File paths and locations
+- Naming conventions
+- Team-specific practices
+```
+
+## Skill Sizing Guidelines
+
+| Size | SKILL.md Lines | Supporting Files | Use Case |
+|------|----------------|------------------|----------|
+| Small | 50-100 | 0 | Simple process or checklist |
+| Medium | 100-200 | 0-1 | Standard methodology |
+| Large | 150-250 | 1-3 | Complex topic with patterns |
+
+**Rule**: If SKILL.md exceeds 300 lines, split into supporting files.
+
+## Validation Checklist
+
+Before committing a new skill:
+
+- [ ] Frontmatter has only `name` and `description`
+- [ ] `name` is kebab-case
+- [ ] `description` includes usage triggers
+- [ ] "When to Use" section is present
+- [ ] `[CUSTOMIZE]` markers for project-specific content
+- [ ] No hardcoded paths or repo-specific references
+- [ ] Supporting files are referenced from SKILL.md
+- [ ] Content is actionable, not just conceptual
+
+## Example: Complete Skill
+
+```markdown
+---
+name: code-review
+description: Structured code review process with security and maintainability focus. Use when reviewing PRs, conducting code audits, or establishing review standards.
+---
+
+# Code Review Skill
+
+Systematic approach to reviewing code changes.
+
+## When to Use
+
+- Reviewing pull requests
+- Conducting security audits
+- Establishing team review standards
+- Self-review before submitting PRs
+
+## Review Process
+
+### 1. Understand Context
+- Read PR description and linked issues
+- Understand the goal before reading code
+
+### 2. High-Level Review
+- Does the approach make sense?
+- Are there architectural concerns?
+
+### 3. Detailed Review
+- Security: Input validation, auth, data exposure
+- Correctness: Edge cases, error handling
+- Maintainability: Readability, naming, complexity
+
+### 4. Provide Feedback
+- Be specific and actionable
+- Suggest alternatives, don't just criticize
+- Distinguish blocking vs. non-blocking
+
+## Project Standards
+
+[CUSTOMIZE] Add your team's review requirements:
+- Required reviewers by area
+- Review checklist items
+- Auto-merge criteria
+```

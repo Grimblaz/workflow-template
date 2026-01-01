@@ -4,7 +4,10 @@ description: "Test writing and validation specialist for high-quality behavior-f
 argument-hint: "Write tests, validate coverage, or fix test failures"
 tools:
   [
-    "execute/getTerminalOutput", "execute/runInTerminal", "read/terminalLastCommand", "read/terminalSelection",
+    "execute/getTerminalOutput",
+    "execute/runInTerminal",
+    "read/terminalLastCommand",
+    "read/terminalSelection",
     "edit",
     "search",
     "agent",
@@ -58,6 +61,7 @@ A specialized mode for writing high-quality, behavior-focused tests that follow 
 - Focus on testing tasks specified in current phase
 - Respect phase boundaries (STOP if next phase requires different agent)
 - Report coverage and mutation results clearly
+- Skills in `.claude/skills/` may provide testing guidance and methodology
 
 ## Core Responsibilities
 

@@ -4,7 +4,10 @@ description: "Implementation plan architect - defines requirements and constrain
 argument-hint: "Create or update implementation plan for a feature or bug fix"
 tools:
   [
-    "execute/getTerminalOutput", "execute/runInTerminal", "read/terminalLastCommand", "read/terminalSelection",
+    "execute/getTerminalOutput",
+    "execute/runInTerminal",
+    "read/terminalLastCommand",
+    "read/terminalSelection",
     "edit",
     "search",
     "agent",
@@ -77,8 +80,10 @@ Before creating plan, assess task complexity:
 
 **Research Decision**: YOU decide if research is needed:
 
-- **Bug fixes, performance issues, unclear requirements** → Call research-agent FIRST via runSubagent
+- **Bug fixes, performance issues, unclear requirements** → Call research-agent FIRST via the agent tool
 - **Clear feature specs, straightforward tasks** → Proceed directly to planning
+
+Skills are discoverable in `.claude/skills/` and should be used when relevant for guidance and methodology.
 
 **Plan Format** (MANDATORY):
 
