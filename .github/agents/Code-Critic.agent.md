@@ -18,7 +18,7 @@ tools:
 handoffs:
   - label: Respond to Review
     agent: Code-Review-Response
-    prompt: Analyze the code review findings above and categorize each item (✅ AGREED / � SIGNIFICANT / �📋 TECH DEBT / ❌ DISAGREE). Present response plan for approval before delegating fixes.
+    prompt: Analyze the code review findings above and categorize each item (✅ AGREED / 🔄 SIGNIFICANT / 📋 TECH DEBT / ❌ DISAGREE). Present response plan for approval before delegating fixes.
     send: false
   - label: Fix Issues
     agent: Code-Smith
