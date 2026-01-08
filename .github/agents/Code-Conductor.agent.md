@@ -155,6 +155,16 @@ Match phase type to specialist agent by analyzing phase name/description for key
   - SOLID principle violations
 - **NEVER use for**: Test files (use Test-Writer), new features (use Code-Smith)
 
+**Refactoring Scope Control:**
+
+- **Proportionate refactoring** = improvements limited to code touched by the change and immediate neighbors required for correctness/readability
+- **Broad rewrite** = refactor that changes the shape/intent of the PR, rewrites unrelated modules, or introduces architectural changes not required by acceptance criteria
+
+**Decision rule:**
+
+- If refactor is required for correctness/testability within touched area → delegate to Refactor-Specialist
+- If refactor expands beyond PR intent → STOP: either (a) ask user for explicit approval, or (b) create tech debt / follow-up issue
+
 **UI Polish Activities:**
 
 - Keywords: Polish, UI Polish, Visual Polish, Spacing, Alignment, Hierarchy, Aesthetic, Screenshot, Iteration

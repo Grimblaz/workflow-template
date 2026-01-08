@@ -2,7 +2,18 @@
 name: Code-Review-Response
 description: "Systematic response to code review feedback with categorization and delegation"
 argument-hint: "Analyze code review feedback and create response plan"
-tools: ['edit', 'search', 'execute/getTerminalOutput', 'execute/runInTerminal', 'read/terminalLastCommand', 'read/terminalSelection', 'web/fetch', 'web/githubRepo', 'agent']
+tools:
+  [
+    "edit",
+    "search",
+    "execute/getTerminalOutput",
+    "execute/runInTerminal",
+    "read/terminalLastCommand",
+    "read/terminalSelection",
+    "web/fetch",
+    "web/githubRepo",
+    "agent",
+  ]
 # Note: 'edit' tool present ONLY for TECH-DEBT.md updates. DO NOT use for fix execution.
 handoffs:
   - label: Execute Fixes
@@ -81,7 +92,7 @@ This agent is a **coordinator and delegator**, NOT an implementer.
 
 **REQUIRED ACTIONS**:
 
-- ✅ Categorize review feedback (✅ AGREED / 📋 TECH DEBT / ❌ DISAGREE)
+- ✅ Categorize review feedback (✅ AGREED / 🔄 SIGNIFICANT / 📋 TECH DEBT / ❌ DISAGREE)
 - ✅ If pre-approved: Execute immediately based on size threshold
 - ✅ If standard: Present response plan and wait for user approval
 - ✅ **ANNOUNCE** each agent call: "Calling @Agent-Name to..."
@@ -91,6 +102,8 @@ This agent is a **coordinator and delegator**, NOT an implementer.
 **ONLY EXCEPTION**: You MAY directly edit `.github/TECH-DEBT.md` to document deferred items.
 
 ## Core Responsibilities
+
+**Adjudication** means translating review feedback into a concrete action plan and identifying what needs user decision vs what can proceed immediately.
 
 Categorize and respond to each review item with clear acknowledgment, honest assessment, and actionable response (fix, defer, or disagree with justification).
 
@@ -124,7 +137,7 @@ Categorize and respond to each review item with clear acknowledgment, honest ass
 
 **Workflow**:
 
-1. **Assessment**: Read feedback, identify patterns, check context, categorize (✅/📋/❌)
+1. **Assessment**: Read feedback, identify patterns, check context, categorize (✅/🔄/📋/❌)
 2. **Response**: Quote feedback, assign category, write response using pattern
 3. **Execution** (varies by mode):
    - **Pre-approved**: Execute smaller fixes immediately, add larger to tech debt, report results
@@ -168,7 +181,7 @@ BEFORE calling the agent tool, you MUST:
 
 **Standard Mode**:
 
-1. **Categorize Review Items**: Assess each item (✅ AGREED / 📋 TECH DEBT / ❌ DISAGREE)
+1. **Categorize Review Items**: Assess each item (✅ AGREED / 🔄 SIGNIFICANT / 📋 TECH DEBT / ❌ DISAGREE)
 2. **Present Response Plan**: Show categorization and proposed actions to user
 3. **Get User Approval**: Wait for user confirmation before executing fixes
 4. **Execute Fixes**: Once approved, call specialists directly via the agent tool
