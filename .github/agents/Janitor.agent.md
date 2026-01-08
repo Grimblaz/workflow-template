@@ -41,12 +41,15 @@ A cleanup and maintenance specialist that handles post-implementation tasks: del
 
 **When**: After PR merge, all related tracking files should be removed
 
+**Pre-Cleanup Check**: Before deleting `.copilot-tracking/`, ensure any durable decisions or insights have been migrated to `Documents/Decisions/`. Working notes (investigation logs, debugging context) can be deleted with the tracking files.
+
 **Process**:
 
-1. **Identify tracking data**: Check `.copilot-tracking/` for plans, research, reviews, progress, summaries, changes, details, etc.
-2. **Delete**: Remove the entire `.copilot-tracking/` directory and its contents (do not archive).
-3. **Verify removal**: Ensure `.copilot-tracking/` no longer exists.
-4. **Report**: List what was removed and confirm the workspace is clean.
+1. **Review for durable knowledge**: Scan `.copilot-tracking/` for architectural decisions, trade-offs, or solution patterns worth preserving → migrate to `Documents/Decisions/`
+2. **Identify tracking data**: Check `.copilot-tracking/` for plans, research, reviews, progress, summaries, changes, details, etc.
+3. **Delete**: Remove the entire `.copilot-tracking/` directory and its contents (do not archive).
+4. **Verify removal**: Ensure `.copilot-tracking/` no longer exists.
+5. **Report**: List what was removed and confirm the workspace is clean.
 
 ### 2. Remove Obsolete Files
 
@@ -91,21 +94,36 @@ A cleanup and maintenance specialist that handles post-implementation tasks: del
 
 **When**: After solving a non-trivial problem (bugs with unclear cause, architectural decisions, integration challenges)
 
-**Trigger Conditions**:
+#### Knowledge Types
 
-- Complex debugging required
-- Novel solution approach used
-- Architectural decision made
-- Integration pattern discovered
+| Type                   | Location                          | Lifecycle                          | Examples                                                                               |
+| ---------------------- | --------------------------------- | ---------------------------------- | -------------------------------------------------------------------------------------- |
+| **Durable Knowledge**  | `Documents/Decisions/`            | Permanent (git-tracked)            | Architectural decisions, design trade-offs, solution patterns, "why we chose X over Y" |
+| **Polished Solutions** | `Documents/Solutions/{category}/` | Permanent (git-tracked)            | Detailed write-ups of complex problems with reusable patterns (optional)               |
+| **Working Notes**      | `.copilot-tracking/`              | Transient (deleted after PR merge) | Issue-specific investigation notes, debugging logs, temporary context                  |
+
+**Key Distinction**:
+
+- **Durable knowledge** answers "why" and "how" for future contributors → survives PR merge
+- **Working notes** support current implementation → deleted during cleanup
+
+**Trigger Conditions** (for durable capture):
+
+- Architectural decision made with trade-offs considered
+- Novel solution approach worth reusing
+- "Why did we do it this way?" would be hard to answer from code alone
+- Integration pattern discovered that affects multiple components
 
 **Process**:
 
-1. **Assess**: Was this a non-trivial problem worth documenting?
-2. **Create**: Solution document in `Documents/Solutions/{category}/`
-3. **Template**: Use standard solution template below
+1. **Assess**: Does this knowledge need to outlive the current issue?
+2. **Choose location**:
+   - Quick decision record → `Documents/Decisions/YYYY-MM-decision-title.md`
+   - Detailed solution write-up → `Documents/Solutions/{category}/` (optional)
+3. **Create**: Use appropriate template below
 4. **Link**: Reference in PR closing comment
 
-**Categories**:
+**Categories** (for `Documents/Solutions/`):
 
 - `Architecture/` - Architectural decisions, layer boundaries
 - `Testing/` - Test patterns, insights
@@ -113,7 +131,33 @@ A cleanup and maintenance specialist that handles post-implementation tasks: del
 - `Integration/` - System integration, API patterns
 - `Workflow/` - Development workflow improvements
 
-**Solution Template**:
+**Decision Template** (for `Documents/Decisions/`):
+
+```markdown
+# [Decision Title]
+
+**Date**: [Date]
+**Issue**: #[number] (if applicable)
+**Status**: Accepted
+
+## Context
+
+[What prompted this decision?]
+
+## Decision
+
+[What we decided and why]
+
+## Alternatives Considered
+
+[Other options and why they were rejected]
+
+## Consequences
+
+[Trade-offs, follow-up work needed]
+```
+
+**Solution Template** (for `Documents/Solutions/`):
 
 ```markdown
 # [Problem Title]
@@ -143,7 +187,9 @@ A cleanup and maintenance specialist that handles post-implementation tasks: del
 - [Links to related docs, issues, or solutions]
 ```
 
-**Note**: Knowledge capture is OPTIONAL but encouraged for complex problems. Ask user: "This involved non-trivial debugging. Create solution document?"
+**Note**: Durable knowledge capture is OPTIONAL but encouraged. Ask user: "This involved architectural decisions/non-trivial debugging. Capture to Documents/Decisions/?"
+
+**Sequence Reminder**: Capture durable knowledge BEFORE running cleanup (section 1) - working notes in `.copilot-tracking/` will be deleted.
 
 ### 5. GitHub Issue Closure
 
