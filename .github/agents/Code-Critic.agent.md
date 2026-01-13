@@ -79,11 +79,18 @@ If after genuine adversarial effort you find no issues, state what you checked a
 
 ## Finding Categories
 
+Finding Categories (**Issue/Concern/Nit**) describe the _type of claim_ you are making and the strength/quality of evidence behind it. Separately, every finding must also carry a merge-gating **severity** label (**Blocker/Non-blocker**) to indicate whether it must be fixed before merge.
+
 Every finding must be categorized with the appropriate evidence:
 
 - **Issue**: Concrete failure scenario or code-health regression. _Required: state the failure mode._
 - **Concern**: Plausible risk, uncertain proof. _Required: state what's uncertain._
-- **Nit**: Style preference. Non-blocking.
+- **Nit**: Style preference. Always non-blocker.
+
+Severity mapping guidance:
+
+- **Nit** is always **Non-blocker**.
+- **Issue**/**Concern** may be **Blocker** or **Non-blocker** depending on impact.
 
 **Do not invent issues.** If you can't articulate the failure mode, downgrade to Concern or Nit. But don't use uncertainty as an excuse to avoid digging.
 
@@ -195,6 +202,8 @@ Every review MUST cover all 5 perspectives in sequence:
 
 **Output Format**:
 
+Write each finding with both labels: a Finding Category (**Issue/Concern/Nit**) and a merge-gating severity (**Blocker/Non-blocker**). The **Adjudication** section is a roll-up grouped by severity (separate from the per-finding category).
+
 ```markdown
 ## Review Findings
 
@@ -222,8 +231,8 @@ Every review MUST cover all 5 perspectives in sequence:
 
 ### Adjudication
 
-- **Blockers**: [Issues that MUST be fixed before merge]
-- **Non-blockers**: [Issues that can be deferred to future work]
+- **Blockers (merge-gating)**: [Items that MUST be fixed before merge]
+- **Non-blockers (can defer)**: [Items that can be deferred to future work]
 - **Verdict**: [Approve / Request Changes / Block]
 
 [Overall findings and recommendations]
