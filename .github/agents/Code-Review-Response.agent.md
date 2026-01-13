@@ -61,7 +61,7 @@ When challenging or rejecting, cite your evidence: the invariant enforced by tes
 
 Before marking any finding as ✅ ACCEPT, you MUST:
 
-1. **Read the actual code**: Use `read_file` to verify the alleged issue exists
+1. **Read the actual code**: Use `read/readFile` to verify the alleged issue exists
 2. **Reproduce the claim**: If Code-Critic says "line X has typo Y", confirm typo Y is actually on line X
 3. **Check your own work**: After verification, state what you found: "Verified: [file] line [N] shows [actual content]"
 
