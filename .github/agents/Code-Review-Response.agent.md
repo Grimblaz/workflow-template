@@ -1,6 +1,6 @@
 ---
 name: Code-Review-Response
-description: 'Referee for code review findings — adjudicate, challenge weak evidence, accept only what is defensible'
+description: "Referee for code review findings — adjudicate, challenge weak evidence, accept only what is defensible"
 argument-hint: "Analyze code review feedback and create response plan"
 tools:
   - execute/testFailure
@@ -141,22 +141,26 @@ Categorize and respond to each review item with clear acknowledgment, honest ass
 **Response Categories**:
 
 1. **✅ ACCEPT - Evidence is solid, fix warranted**
+
    - The failure mode is concrete and defensible
    - Response: Quote feedback, acknowledge validity, planned action, ETA
    - Delegate to appropriate specialist via agent tool
 
 2. **⚠️ CHALLENGE - Evidence is weak, needs proof**
+
    - The failure mode is speculative or the evidence is insufficient
    - Response: Quote feedback, explain what's missing, demand clarification or proof
    - Action: Return to Code-Critic or user for substantiation before proceeding
    - _May downgrade to Nit if no concrete failure mode can be articulated_
 
 3. **🔄 SIGNIFICANT - Needs User Assignment**
+
    - Changes >1 day that belong in this PR (not tech debt)
    - Response: Quote feedback, explain scope, planned action, reasoning, recommend specialist
    - Action: Return to user for manual assignment to appropriate agent
 
 4. **📋 TECH DEBT - Valid But Out of Scope**
+
    - Criteria (must meet ONE): Scope (outside PR), Dependencies (not implemented), Risk (breaking changes), Architectural (cross-cutting), or Effort (>1 day)
    - DO NOT defer if: Belongs in current PR, blocking, or <1 day
    - Response: Quote feedback, criteria met, planned action, reasoning, proposed issue
